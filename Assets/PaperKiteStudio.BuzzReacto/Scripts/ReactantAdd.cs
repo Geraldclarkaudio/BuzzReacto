@@ -16,6 +16,9 @@ namespace PaperKiteStudios.BuzzReacto
         [SerializeField]
         private bool bakingSodaAdded, vinegarAdded, solution1Added, solution2Added = false;
 
+        [SerializeField]
+        private GameObject dialog3;
+
         public void VinegarAdded()
         {
             vinegarAdded = true;
@@ -57,6 +60,8 @@ namespace PaperKiteStudios.BuzzReacto
         public void BakingSodaAddVinegar()
         {
             bubbles.SetActive(true);
+            dialog3.SetActive(true);
+
         }
 
         public void TreePotion()

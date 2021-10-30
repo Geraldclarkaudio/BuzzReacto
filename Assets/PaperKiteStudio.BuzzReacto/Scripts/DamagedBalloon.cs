@@ -55,7 +55,7 @@ namespace PaperKiteStudios.BuzzReacto
             LOLSDK.Instance.SubmitProgress(0, 0, 0);
             yield return new WaitForSeconds(1.5f);
             //load scene
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene("FloatUp_Scene");
         }
     }
 }

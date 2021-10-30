@@ -30,8 +30,8 @@
     "scene02-0013": "Viola! You did it! Now we have a product that produces a gas. Lets fix up our ship and get our balloon inflated.",
     
     
-    //Press E At ship
-    "scene02-0014": "You found the reactants necessary to get a gas product! Nice work. Press on and find the ingredients for the potion. I�ll be waiting for you here! Its not like I can go anywhere anyway!",
+    "scene02-0014": "You found the reactants necessary to get a gas product! Nice work.",
+    "scene02-0015":"Press on and find the ingredients for the potion. I will be waiting for you here! Its not like I can go anywhere anyway!",
 
     //Icy Cave Scene
     "scene03-0001": "Distant voice: Help Help! Its freezing in here!",

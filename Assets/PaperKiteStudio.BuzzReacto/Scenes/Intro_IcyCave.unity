@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be99c47613981c8419295a7a74e9b8ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 6
+  sceneToLoad: Cave
 --- !u!4 &603092642
 Transform:
   m_ObjectHideFlags: 0

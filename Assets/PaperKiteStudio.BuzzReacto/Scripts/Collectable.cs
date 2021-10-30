@@ -7,7 +7,7 @@ namespace PaperKiteStudios.BuzzReacto
     public class Collectable : MonoBehaviour
     {
         [SerializeField]
-        private GameObject dialogueBox2;
+        private GameObject dialogueBox;
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.tag == "Player")
@@ -16,14 +16,13 @@ namespace PaperKiteStudios.BuzzReacto
 
                 if (gameObject.name == "Vinegar")
                 {
-                    GameManager.Instance.hasVinegar = true;
-                    
+                    GameManager.Instance.hasVinegar = true;             
                 }
 
                 if (gameObject.name == "Baking_Soda")
                 {
                     GameManager.Instance.hasBakingSoda = true;
-                    dialogueBox2.SetActive(true);
+                    dialogueBox.SetActive(true);
 
                 }
 
