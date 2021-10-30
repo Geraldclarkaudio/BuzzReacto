@@ -1,0 +1,63 @@
+﻿{
+  "_meta": {
+    "maxChars": {
+      "highlight": 10000
+    }
+  },
+  "en": {
+    "InitializeText": "Initializing...",
+    "StartButton": "START",
+
+    "scene01-0001": "Oh no! It looks like I'm running out of gas for my balloon! This is going to be a rough landing!",
+    "scene01-0002": "Judging by my calculations, we are traveling at a safe speed. However, our trajectory is lining up with that tree!",
+    "scene01-0003": "Well...HERE WE GO!!",
+    "scene01-0004": "AH!!! buzz click click",
+
+
+    "scene02-0001": "That was scary! Luckily we are still in one piece. Well...I am.",
+    "scene02-0002": "Yes. Lucky indeed. It appears we have crash landed in a strange forest..Analyzing...",
+    "scene02-0003": "HEY THERE!",
+    "scene02-0004": "AH!!! A TALKING TREE",
+    "scene02-0005": "OH A viridio giganto Quercus!",
+    "scene02-0006": "Yea! I can talk! You crashed your ship into me, and it appears you�re stranded. Let me help you. You�ve landed in Reaction Forest. Everything here functions using chemical reactions. Your balloon has run out of gas.",
+    "scene02-0007": "Lucky for you, this area of the forest has plenty of REACTANTS that can produce a GAS PRODUCT. If you promise to help me, I�ll help you get out of here so you can get back home.",
+    "scene02-0008": "I will absolutely help!",
+    "scene02-0009": "Great! I need a potion. The only potion that will work is one that is created from the product of a PRECIPITATE REACTION. I�ll get into this later. First you need to go get the REACTANTS.",
+    "scene02-0010": "Let's get your balloon filled up again so you can find the REACTANTS for my potion. Be careful though. The ground moves in some places! Fall off and you will end up back here talking to me.",
+
+    "scene02-0011":"Ah. It appears you have found the first REACTANT for the chemical reaction.  Press I to open your inventory panel",
+    "scene02-0012": "Here you can see the reactant. Drag it into the slot. Right now, it doesn�t do anything, but when you add the second reactant a chemical reaction will take place! Let�s continue through the forest to find it.",
+    "scene02-0013": "Viola! You did it! Now we have a product that produces a gas. Lets fix up our ship and get our balloon inflated.",
+    
+    
+    //Press E At ship
+    "scene02-0014": "You found the reactants necessary to get a gas product! Nice work. Press on and find the ingredients for the potion. I�ll be waiting for you here! Its not like I can go anywhere anyway!",
+
+    //Icy Cave Scene
+    "scene03-0001": "Distant voice: Help Help! Its freezing in here!",
+    "scene03-0002": "Woah! Who is that? We gotta go find them!",
+    "scene03-0003": "Scanning... Scanning... Life-form detected.",
+    "scene03-0004": "Lets go S.A.N.I.A",
+    "scene03-0005": "beep beep click brrrr",
+
+    //Lightzone
+    "scene03-0006": "The sunlight peering through the roof of this cave is making this spot very warm.",
+    "scene03-0007": "I�m sure it is a nice experience. I however cannot feel anything�.Scanning Scanning. Life form is closer now. We will need to find something flammable to unfreeze the block of ice they are trapped behind. Scanning...Scanning...ah...lets follow this elevator up. My analyzer has obtained a signal from something we could potentially use.",
+
+    //Obtaining Wood:
+    "scene03-0008": "A piece of dry wood. I bet we can get this to heat up enough to cause a flame to happen.",
+    "scene03-0009": "Surely. When wood catches fire, a new substance is formed. This substance cannot be changed back to its original state, therefore it is a chemical reaction.",
+    "scene03-0010": "Lets go back to where its warm and make this chemical reaction take place!",
+    "scene03-0011": "beep boop",
+    //Rabbit Contact:
+    "scene03-0012": "OH WOW! PETE! What are you doing in here!?",
+    "scene03-0013": ": Buzz! Im glad to see you. I was just out for a stroll when the cave temperature suddenly dropped freezing everything. I was trapped. I�m so hungry. I want to get out of here, but I don�t have enough energy to make it. I can smell some food somewhere in this cave though. Can you help me find it?",
+    "scene03-0014": "I'm on it! Lets go S.A.N.I.A!",
+    "scene03-0015": "Beep beep",
+
+    //Carrot Obtained:
+    "scene03-0016": "Ah you found a Daucus carota.",
+    "scene03-0017": "A carrot. Pete would LOVE this. Lets go bring this to him."
+
+  }
+}
