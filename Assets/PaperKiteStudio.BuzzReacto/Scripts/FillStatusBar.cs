@@ -17,9 +17,25 @@ namespace PaperKiteStudios.BuzzReacto
         [SerializeField]
         private GameObject button;
 
+        [SerializeField]
+        private GameObject cookedCarrot;
+
+        [SerializeField]
+        private GameObject carrot2CarrotImg;
+
+        [SerializeField]
+        private GameObject text;
+        [SerializeField]
+        private GameObject arrowdown;
+
+        private Animator anim;
+
+        
+
         // Start is called before the first frame update
         void Start()
         {
+            anim = GameObject.Find("Main Camera").GetComponent<Animator>();
             slider = GetComponent<Slider>();
         }
 
@@ -55,14 +71,27 @@ namespace PaperKiteStudios.BuzzReacto
             if (slider.value == 1)
             {
                 button.SetActive(false);
+                cookedCarrot.SetActive(true);
+                arrowdown.SetActive(false);
+                StartCoroutine(TurnOffCarrot());
+                carrot2CarrotImg.SetActive(false);
+                text.SetActive(false);
                 slider.value = 1;
+
             }
         }
 
         public void ButtonClick()
         {
             currentFill = currentFill + 0.1f;
+            anim.SetTrigger("CamShake");
+        }
 
+        IEnumerator TurnOffCarrot()
+        {
+            yield return new WaitForSeconds(3.0f);
+            cookedCarrot.SetActive(false);
+            Destroy(this.gameObject);
         }
     }
 }
