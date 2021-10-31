@@ -19,14 +19,14 @@ namespace PaperKiteStudios.BuzzReacto
 
         [SerializeField]
         private GameObject cookedCarrot;
-
         [SerializeField]
         private GameObject carrot2CarrotImg;
-
         [SerializeField]
         private GameObject text;
         [SerializeField]
         private GameObject arrowdown;
+        [SerializeField]
+        private GameObject dialogBox;
 
         private Animator anim;
 
@@ -77,6 +77,9 @@ namespace PaperKiteStudios.BuzzReacto
                 carrot2CarrotImg.SetActive(false);
                 text.SetActive(false);
                 slider.value = 1;
+
+                //activate dialog two for scene
+                dialogBox.SetActive(true);
 
             }
         }

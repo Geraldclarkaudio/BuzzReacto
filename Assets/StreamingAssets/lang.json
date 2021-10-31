@@ -45,6 +45,14 @@
     "scene03-0018": "Beep beep",
     "scene03-0019": "Ah you found a Daucus carota.",
     "scene03-0020": "A carrot. Pete would LOVE this. Lets go bring this to him.",
+
+    "scene04-0001": "I used the burning wood for this fire. Let us cook this carrot.",
+    "scene04-0002": "During a chemical reaction, a new substance is formed with different physical properties.",
+    "scene04-0003": "In this case, several of the carrot’s physical properties will change. The color, just like the wood. The odor will change. The carrot's softness changes too! All this happens when exposed to a drastic temperature change.",
+    "scene04-0004": "Wow thanks Buzz! This looks delicious! I’m surely going to have enough energy to get home now.",
+    "scene04-0005": "To thank you for your trouble, I want to give you this solution. It can be used as one of the ingredients for the Tree of Life’s potion.",
+    "scene04-0006": "There is a lake full of the second reactant needed for this potion up ahead. Lets go get some!",
+    "startCooking": "Start Cooking",
     "StartButton": "START",
     "TapHereButton": "Tap Here To Cook!"
   }
