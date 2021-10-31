@@ -68,7 +68,15 @@ namespace PaperKiteStudios.BuzzReacto
         {
             InventoryScreen();
             PauseGame();
-            Movement();
+            if (canMove == false)
+            {
+                return;
+            }
+            else if(canMove==true)
+            {
+                Movement();
+            }
+            
         }
 
         public void Movement()

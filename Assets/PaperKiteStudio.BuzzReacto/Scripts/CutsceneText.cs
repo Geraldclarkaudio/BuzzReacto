@@ -29,8 +29,7 @@ namespace PaperKiteStudios.BuzzReacto
         }
         // Start is called before the first frame update
         void Start()
-        {
-           
+        {    
             text1.text = init.GetText(text1Text);
             text2.text = init.GetText(text2Text);
             text3.text = init.GetText(text3Text);

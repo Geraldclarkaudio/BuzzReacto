@@ -8,6 +8,9 @@ namespace PaperKiteStudios.BuzzReacto
     public class NPC : MonoBehaviour
     {
         public bool interactable = false;
+
+        [SerializeField]
+        private GameObject dialogueBox;
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.tag == "Player")
@@ -33,15 +36,14 @@ namespace PaperKiteStudios.BuzzReacto
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         //begin cooking carrot section. 
-                        SceneManager.LoadScene(7);
+                        SceneManager.LoadScene("Rabbit_Rescued");
                     }
                 }
                 else if (GameManager.Instance.hasCarrot == false)
                 {
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        //Dialog pops up that says " I'm so hungry I can hardly stand!"
-                        Debug.Log("Need to get the Carrot first.");
+                        dialogueBox.SetActive(true);
                         return;
                     }
                 }

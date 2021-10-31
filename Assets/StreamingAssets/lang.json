@@ -46,19 +46,19 @@
     "scene03-0008": "We will need to find something flammable to unfreeze the block of ice they are trapped behind. Scanning...Scanning...",
     "scene03-0009": "Ah...lets follow this elevator up. My analyzer has obtained a signal from something we could potentially use.",
 
-    //Obtaining Wood:
+   
     "scene03-0010": "A piece of dry wood. I bet we can get this to heat up enough to cause a flame to happen.",
     "scene03-0011": "Surely. When wood catches fire, a new substance is formed. This substance cannot be changed back to its original state, therefore it is a chemical reaction.",
     "scene03-0012": "Lets go back to where its warm and make this chemical reaction take place!",
     "scene03-0013": "beep boop",
-    //Rabbit Contact:
+   
     "scene03-0014": "OH WOW! PETE! What are you doing in here!?",
-    "scene03-0015": ": Buzz! Im glad to see you. I was just out for a stroll when the cave temperature suddenly dropped freezing everything. I was trapped. I am so hungry.",
+    "scene03-0015": "Buzz! Im glad to see you. I was just out for a stroll when the cave temperature suddenly dropped freezing everything. I was trapped. I am so hungry.",
     "scene03-0016": "I want to get out of here, but I don not have enough energy to make it. I can smell some food somewhere in this cave though. Can you help me find it?",
     "scene03-0017": "I'm on it! Lets go S.A.N.I.A!",
     "scene03-0018": "Beep beep",
 
-    //Carrot Obtained:
+    
     "scene03-0019": "Ah you found a Daucus carota.",
     "scene03-0020": "A carrot. Pete would LOVE this. Lets go bring this to him."
 

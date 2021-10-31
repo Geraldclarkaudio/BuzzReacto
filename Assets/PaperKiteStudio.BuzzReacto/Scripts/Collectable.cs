@@ -14,6 +14,7 @@ namespace PaperKiteStudios.BuzzReacto
             {
                 Destroy(this.gameObject);
 
+                ///GAS SCENE::::::::::::::::::::::::::::::::::::::::::
                 if (gameObject.name == "Vinegar")
                 {
                     GameManager.Instance.hasVinegar = true;             
@@ -25,11 +26,17 @@ namespace PaperKiteStudios.BuzzReacto
                     dialogueBox.SetActive(true);
 
                 }
-
-                //PART 2 ========================================
+                //CAVE SCENE::::::::::::::::::::::::::::::::::::::
                 if (gameObject.name == "Wood_Plank")
                 {
                     GameManager.Instance.hasWoodPlank = true;
+                    dialogueBox.SetActive(true);
+                }
+                if(gameObject.name == "Carrot")
+                {
+                    GameManager.Instance.hasCarrot = true;
+                    dialogueBox.SetActive(true);
+
                 }
 
                 if (gameObject.name == "Water_Bottle")
