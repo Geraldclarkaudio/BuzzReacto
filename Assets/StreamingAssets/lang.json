@@ -6,6 +6,7 @@
   },
   "en": {
     "InitializeText": "Initializing...",
+    "StartButton": "START",
     "scene01-0001": "Oh no! It looks like I'm running out of gas for my balloon! This is going to be a rough landing!",
     "scene01-0002": "Judging by my calculations, we are traveling at a safe speed. However, our trajectory is lining up with that tree!",
     "scene01-0003": "Well...HERE WE GO!!",
@@ -20,8 +21,8 @@
     "scene02-0008": "I will absolutely help!",
     "scene02-0009": "Great! I need a potion. The only potion that will work is one that is created from the product of a PRECIPITATE REACTION. I�ll get into this later. First you need to go get the REACTANTS.",
     "scene02-0010": "Let's get your balloon filled up again so you can find the REACTANTS for my potion. Be careful though. The ground moves in some places! Fall off and you will end up back here talking to me.",
-    "scene02-0011": "Ah. It appears you have found the first REACTANT for the chemical reaction.  Press I to open your inventory panel",
-    "scene02-0012": "Here you can see the reactant. Drag it into the slot. Right now, it doesn�t do anything, but when you add the second reactant a chemical reaction will take place! Let�s continue through the forest to find it.",
+    "scene02-0011": "Ah. It appears you have found the first REACTANT for the chemical reaction. Your inventory will be where we handle combining reactants",
+    "scene02-0012": "You can open your inventory by pressing I. Give it a shot! After that lets continue searching for the second reactant.",
     "scene02-0013": "Viola! You did it! Now we have a product that produces a gas. Lets fix up our ship and get our balloon inflated.",
     "scene02-0014": "You found the reactants necessary to get a gas product! Nice work.",
     "scene02-0015": "Press on and find the ingredients for the potion. I will be waiting for you here! Its not like I can go anywhere anyway!",
@@ -51,9 +52,14 @@
     "scene04-0003": "In this case, several of the carrot’s physical properties will change. The color, just like the wood. The odor will change. The carrot's softness changes too! All this happens when exposed to a drastic temperature change.",
     "scene04-0004": "Wow thanks Buzz! This looks delicious! I’m surely going to have enough energy to get home now.",
     "scene04-0005": "To thank you for your trouble, I want to give you this solution. It can be used as one of the ingredients for the Tree of Life’s potion.",
-    "scene04-0006": "There is a lake full of the second reactant needed for this potion up ahead. Lets go get some!",
+    "scene04-0006": "To obtain the second reactant we need to go into a dangerous part of the forest. Lets go!",
     "startCooking": "Start Cooking",
-    "StartButton": "START",
-    "TapHereButton": "Tap Here To Cook!"
+    "TapHereButton": "Tap Here To Cook!",
+
+    "scene05-0001": "In this section of the forest you need to be very careful. Not only are there moving platforms to navigate.",
+    "scene05-0002": "There are also mean little chemical reaction bugs running around. If you are not careful they will bite you!",
+    "scene05-0003": "Be sure to jump on them when you see them. Collect enough of their jelly, and you will have the ingredients necessay for the potion.",
+    "scene05-0004": "Be careful!"
+
   }
 }

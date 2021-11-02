@@ -11,14 +11,18 @@ namespace PaperKiteStudios.BuzzReacto
 {
     public class TextDisplay : MonoBehaviour
     {
+        
         private Initializer init;
+        private Player player;
         public TextMeshProUGUI textComponent;
         public string[] lines;
         public float textSpeed;
         private int index;
         private void Start()
         {
+           
             init = GameObject.Find("App").GetComponent<Initializer>();
+            player = GameObject.Find("Player").GetComponent<Player>();
             textComponent.text = init.GetText(lines[index]);
             StartDialogue();
         }
@@ -43,6 +47,7 @@ namespace PaperKiteStudios.BuzzReacto
         {
             index = 0;
             textComponent.text = init.GetText(lines[index]);
+            player.canMove = false;
             //StartCoroutine(TypeLine());
         }
 
@@ -54,7 +59,6 @@ namespace PaperKiteStudios.BuzzReacto
                 yield return new WaitForSeconds(textSpeed);
             }
         }
-
         void NextLine()
         {
             if(index < lines.Length - 1)
@@ -65,6 +69,7 @@ namespace PaperKiteStudios.BuzzReacto
             }
             else
             {
+                player.canMove = true;
                 gameObject.SetActive(false);
             }
         }

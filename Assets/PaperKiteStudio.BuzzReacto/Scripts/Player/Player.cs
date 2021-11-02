@@ -68,6 +68,7 @@ namespace PaperKiteStudios.BuzzReacto
         {
             InventoryScreen();
             PauseGame();
+
             if (canMove == false)
             {
                 return;

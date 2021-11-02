@@ -1,0 +1,28 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace PaperKiteStudios.BuzzReacto
+{
+    public class EnableDisableMovement : MonoBehaviour
+    {
+        private Player player;
+
+
+        // Start is called before the first frame update
+        void Start()
+        {
+            player = GameObject.Find("Player").GetComponent<Player>();
+        }
+        public void OnEnable()
+        {
+            player.canMove = false;
+        }
+
+        public void OnDisable()
+        {
+            player.canMove = true;
+        }
+    }
+}
+
