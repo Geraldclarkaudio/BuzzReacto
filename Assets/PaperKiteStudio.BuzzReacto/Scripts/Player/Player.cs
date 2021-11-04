@@ -30,6 +30,9 @@ namespace PaperKiteStudios.BuzzReacto
         [SerializeField]
         private GameObject saniaLF, saniaRF;
 
+        [SerializeField]
+        private int jellyCount;
+
         public bool canMove = true;
 
 
@@ -37,6 +40,8 @@ namespace PaperKiteStudios.BuzzReacto
         // Start is called before the first frame update
         void Start()
         {
+            jellyCount = 0;
+
             _uiManager = GameObject.Find("UI_Manager").GetComponent<UIManager>();
             if (_uiManager == null)
             {
@@ -164,6 +169,12 @@ namespace PaperKiteStudios.BuzzReacto
                 saniaRF.SetActive(false);
 
             }
+        }
+
+        public void ObtainedJelly()
+        {
+            jellyCount++;
+            //update UI
         }
     }
 }

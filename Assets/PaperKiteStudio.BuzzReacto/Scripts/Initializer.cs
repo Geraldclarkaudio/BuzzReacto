@@ -40,7 +40,7 @@ namespace PaperKiteStudios.BuzzReacto
             LOLSDK.Instance.QuestionsReceived += new QuestionListReceivedHandler(questionList => Debug.Log(questionList));
             LOLSDK.Instance.LanguageDefsReceived += new LanguageDefsReceivedHandler(LanguageUpdate);
             LoadMockData();
-            SceneManager.LoadScene("MainMenu");
+            //SceneManager.LoadScene("MainMenu");
             // Create the WebGL (or mock) object
             // This will all change in SDK V6 to be simplified and streamlined.
 

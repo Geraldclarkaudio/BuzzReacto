@@ -8,6 +8,14 @@ namespace PaperKiteStudios.BuzzReacto
     {
         [SerializeField]
         private GameObject dialogueBox;
+
+        private Player player;
+
+        private void Start()
+        {
+            player = GameObject.Find("Player").GetComponent<Player>();
+        }
+
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.tag == "Player")
@@ -36,12 +44,17 @@ namespace PaperKiteStudios.BuzzReacto
                 {
                     GameManager.Instance.hasCarrot = true;
                     dialogueBox.SetActive(true);
-
                 }
 
                 if (gameObject.name == "Water_Bottle")
                 {
                     GameManager.Instance.hasWaterBottle = true;
+                }
+
+                if(gameObject.name == "Jelly(Clone)")
+                {
+                    Debug.Log("Obtained Jelly");
+                    player.ObtainedJelly();
                 }
             }
 

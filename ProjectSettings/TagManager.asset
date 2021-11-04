@@ -13,6 +13,7 @@ TagManager:
   - SceneStart
   - Solution1
   - Solution2
+  - PlayerHitBox
   layers:
   - Default
   - TransparentFX
