@@ -33,6 +33,8 @@ namespace PaperKiteStudios.BuzzReacto
 
         [SerializeField]
         private int jellyCount;
+        [SerializeField]
+        private GameObject jellyUI;
 
         public bool canMove = true;
 
@@ -184,6 +186,7 @@ namespace PaperKiteStudios.BuzzReacto
             {
                 //has the green jelly UI
                 GameManager.Instance.hasSolution2 = true;
+                jellyUI.SetActive(true);
 
                 dialog.SetActive(true);
 

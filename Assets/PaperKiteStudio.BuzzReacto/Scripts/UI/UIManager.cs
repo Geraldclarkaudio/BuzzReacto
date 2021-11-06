@@ -20,15 +20,10 @@ namespace PaperKiteStudios.BuzzReacto
         public TextMeshProUGUI jellyCount;
 
         [SerializeField]
-        private GameObject bakingSodaUI, vinegarUI, waterBottleUI, woodPlankUI, jellyUI;
+        private GameObject bakingSodaUI, vinegarUI, waterBottleUI, woodPlankUI;
 
         // [SerializeField]
         // private GameObject gameOverButton;
-
-        private void Awake()
-        {
-            DontDestroyOnLoad(this.gameObject);
-        }
 
         public void InventoryActive()
         {
@@ -53,11 +48,6 @@ namespace PaperKiteStudios.BuzzReacto
                 bakingSodaUI.SetActive(true);
             }
 
-            if (GameManager.Instance.hasWoodPlank == true)
-            {
-                woodPlankUI.SetActive(true);
-            }
-
             if (GameManager.Instance.hasVinegar == true)
             {
                 vinegarUI.SetActive(true);
@@ -73,10 +63,7 @@ namespace PaperKiteStudios.BuzzReacto
                 bakingSodaUI.SetActive(false);
                 vinegarUI.SetActive(false);
             }
-            if(GameManager.Instance.hasSolution2 == true)
-            {
-                jellyUI.SetActive(true);
-            }
+
         }
 
         IEnumerator ArrowPointerRoutine() // Animation for arrows when UI opens
