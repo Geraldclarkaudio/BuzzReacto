@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace PaperKiteStudios.BuzzReacto
 {
@@ -16,9 +17,10 @@ namespace PaperKiteStudios.BuzzReacto
         [SerializeField]
         private GameObject pointerArrows;
 
+        public TextMeshProUGUI jellyCount;
 
         [SerializeField]
-        private GameObject bakingSodaUI, vinegarUI, waterBottleUI, woodPlankUI;
+        private GameObject bakingSodaUI, vinegarUI, waterBottleUI, woodPlankUI, jellyUI;
 
         // [SerializeField]
         // private GameObject gameOverButton;
@@ -70,8 +72,10 @@ namespace PaperKiteStudios.BuzzReacto
             {
                 bakingSodaUI.SetActive(false);
                 vinegarUI.SetActive(false);
-
-                // gameOverButton.SetActive(true);
+            }
+            if(GameManager.Instance.hasSolution2 == true)
+            {
+                jellyUI.SetActive(true);
             }
         }
 
@@ -80,6 +84,11 @@ namespace PaperKiteStudios.BuzzReacto
             pointerArrows.SetActive(true);
             yield return new WaitForSeconds(2.0f);
             pointerArrows.SetActive(false);
+        }
+
+        public void UpdateJellyAmount(int count)
+        {
+            jellyCount.text = "" + count;
         }
     }
 }

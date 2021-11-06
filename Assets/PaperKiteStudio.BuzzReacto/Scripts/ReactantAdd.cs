@@ -52,7 +52,7 @@ namespace PaperKiteStudios.BuzzReacto
             {
                 TreePotion();
                 productText.SetActive(false);
-                GameManager.Instance.hasTreePotion = true;
+                GameManager.Instance.haspreMixedPotion = true;
             }
         }
 

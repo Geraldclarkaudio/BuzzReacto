@@ -32,8 +32,9 @@ namespace PaperKiteStudios.BuzzReacto
         public bool hasFuel { get; set; }
         public bool hasCarrot { get; set; }
         public bool hasCookedCarrot { get; set; }
-        public bool hasTreePotion { get; set; }
 
+        public bool haspreMixedPotion { get; set; }
+        public bool hasTreePotion { get; set; }
         public bool hasSolution2 { get; set; }
 
         private void Awake()

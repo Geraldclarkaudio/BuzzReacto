@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DisabledObject : MonoBehaviour
+namespace PaperKiteStudios.BuzzReacto
 {
-    [SerializeField]
-    private GameObject sceneLoader;
-
-    private void OnDisable()
+    public class DisabledObject : MonoBehaviour
     {
-        sceneLoader.SetActive(true);
+        [SerializeField]
+        private GameObject sceneLoader;
+
+        private void OnDisable()
+        {
+            sceneLoader.SetActive(true);
+        }
     }
 }

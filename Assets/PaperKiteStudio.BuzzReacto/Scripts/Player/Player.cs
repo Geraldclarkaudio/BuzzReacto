@@ -30,10 +30,14 @@ namespace PaperKiteStudios.BuzzReacto
         [SerializeField]
         private GameObject saniaLF, saniaRF;
 
+
         [SerializeField]
         private int jellyCount;
 
         public bool canMove = true;
+
+        [SerializeField]
+        private GameObject dialog;
 
 
 
@@ -171,10 +175,19 @@ namespace PaperKiteStudios.BuzzReacto
             }
         }
 
-        public void ObtainedJelly()
+        public void ObtainedJelly(int amount)
         {
-            jellyCount++;
-            //update UI
+            jellyCount ++;
+            _uiManager.UpdateJellyAmount(jellyCount);
+
+            if(jellyCount == 5)
+            {
+                //has the green jelly UI
+                GameManager.Instance.hasSolution2 = true;
+
+                dialog.SetActive(true);
+
+            }
         }
     }
 }

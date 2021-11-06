@@ -11,6 +11,8 @@ namespace PaperKiteStudios.BuzzReacto
 
         private Player player;
 
+        public int jellys;
+
         private void Start()
         {
             player = GameObject.Find("Player").GetComponent<Player>();
@@ -54,7 +56,7 @@ namespace PaperKiteStudios.BuzzReacto
                 if(gameObject.name == "Jelly(Clone)")
                 {
                     Debug.Log("Obtained Jelly");
-                    player.ObtainedJelly();
+                    player.ObtainedJelly(jellys);
                 }
             }
 

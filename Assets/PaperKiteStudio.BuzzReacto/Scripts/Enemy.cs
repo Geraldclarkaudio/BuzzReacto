@@ -17,6 +17,7 @@ namespace PaperKiteStudios.BuzzReacto
         private SpriteRenderer _sprite;
         private Animator _anim;
         private Rigidbody2D playerRB;
+        private BoxCollider2D col;
 
         [SerializeField]
         private GameObject jellyPrefab;
@@ -26,6 +27,7 @@ namespace PaperKiteStudios.BuzzReacto
             _anim = GetComponent<Animator>();
             _sprite = GetComponent<SpriteRenderer>();
             playerRB = GameObject.Find("Player").GetComponent<Rigidbody2D>();
+            col = GetComponent<BoxCollider2D>();
 
 
         }
@@ -36,6 +38,7 @@ namespace PaperKiteStudios.BuzzReacto
             {
                 playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y + 20f);
                 Instantiate(jellyPrefab, transform.position, Quaternion.identity);
+                Destroy(col);
                 Destroy(this.gameObject, 1f);
             }
         }
