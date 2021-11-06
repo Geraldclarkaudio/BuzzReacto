@@ -13,10 +13,16 @@ namespace PaperKiteStudios.BuzzReacto
 
         private void OnEnable()
         {
-           
-            objectToDisable.SetActive(false);
+
+            StartCoroutine(Wait());
 
             objectToEnable.SetActive(true);
+        }
+
+        IEnumerator Wait()
+        {
+            yield return new WaitForSeconds(1f);
+            objectToDisable.SetActive(false);
         }
     }
 }

@@ -29,4 +29,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/PaperKiteStudio.BuzzReacto/Scenes/Rabbit_Rescued.unity
     guid: e8b42ee50de26dc4d9776b0cb6db2937
+  - enabled: 1
+    path: Assets/PaperKiteStudio.BuzzReacto/Scenes/Bugs_Scene.unity
+    guid: 71c62a3529fc24543ad66ccca37da16f
+  - enabled: 1
+    path: Assets/PaperKiteStudio.BuzzReacto/Scenes/Stir.unity
+    guid: ee274290427fb554eadc1c134d4761d6
+  - enabled: 1
+    path: Assets/PaperKiteStudio.BuzzReacto/Scenes/Final_Scene.unity
+    guid: d12f1db670a68034286a95486006fe2c
   m_configObjects: {}
