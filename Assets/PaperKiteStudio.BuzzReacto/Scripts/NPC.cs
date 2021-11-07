@@ -11,11 +11,16 @@ namespace PaperKiteStudios.BuzzReacto
 
         [SerializeField]
         private GameObject dialogueBox;
+
+        [SerializeField]
+        private GameObject dialogBubble;
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.tag == "Player")
             {
                 interactable = true;
+                dialogBubble.SetActive(true);
+                  
             }
         }
 
@@ -24,6 +29,7 @@ namespace PaperKiteStudios.BuzzReacto
             if (other.tag == "Player")
             {
                 interactable = false;
+                dialogBubble.SetActive(false);
             }
         }
 

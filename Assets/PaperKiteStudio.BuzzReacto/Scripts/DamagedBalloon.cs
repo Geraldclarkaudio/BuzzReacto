@@ -8,12 +8,19 @@ namespace PaperKiteStudios.BuzzReacto
 {
     public class DamagedBalloon : MonoBehaviour
     {
+        [SerializeField]
+        private GameObject dialogBubble;
+
         public bool interactable = false;
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.tag == "Player")
             {
                 interactable = true;
+                if(GameManager.Instance.hasFuel == true)
+                {
+                    dialogBubble.SetActive(true);
+                }
             }
         }
         private void OnTriggerExit2D(Collider2D other)
@@ -21,6 +28,7 @@ namespace PaperKiteStudios.BuzzReacto
             if (other.tag == "Player")
             {
                 interactable = false;
+                dialogBubble.SetActive(false);
             }
         }
 
@@ -28,14 +36,13 @@ namespace PaperKiteStudios.BuzzReacto
         {
             if (GameManager.Instance.hasFuel == true && interactable == true)
             {
-                //set dialogue box active that says "Press E to use the product!" 
+                dialogBubble.SetActive(true);
+
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    //celebratory text
-                    //load scene after a few seconds.
-                    //SceneManager.LoadScene(float up to icy cave scene);
+
                     StartCoroutine(LoadingScene());
-                    Debug.Log("Loading New Scene");
+                    
 
                 }
             }

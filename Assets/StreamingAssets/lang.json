@@ -7,6 +7,7 @@
   "en": {
     "InitializeText": "Initializing...",
     "StartButton": "START",
+    "interactPrompt": "Press E to interact",
     "scene01-0001": "BUZZ: Oh no! It looks like I'm running out of gas for my balloon! This is going to be a rough landing!",
     "scene01-0002": "S.A.N.I.A: Judging by my calculations, we are traveling at a safe speed. However, our trajectory is lining up with that tree!",
     "scene01-0003": "BUZZ: Well...HERE WE GO!!",
@@ -71,6 +72,11 @@
     "scene05-0010": "Wow! You got the potion. Such a neat chemical reaction! Lets stir it up and bring it to the tree now.",
 
     "scene06-0001": "Lets shake this bottle up so we can officially create this potion.",
-    "scene06-0002": "Awesome work! Lets go repair the Tree of Life and finally go home!"
+    "scene06-0002": "Awesome work! Lets go repair the Tree of Life and finally go home!",
+
+    "finalScene-0001": "Hi! Welcome back! I am so glad to see you. I see you've brought the potion! YAY!",
+    "finalScene-0002": "Thank you for everything. This will heal my damages, and allow me to live out here in peace. Please be careful on your way home! It looks like you have plenty of gas to get back!",
+    "finalScene-0003": "That’s right! Now that we know how to use chemical reactions to navigate the world, we can take this knowledge back home and share it with our friends and family!",
+    "finalScene-0004": "Lets go Buzz and S.A.N.I.A"
   }
 }

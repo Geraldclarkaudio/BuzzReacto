@@ -11,6 +11,9 @@ namespace PaperKiteStudios.BuzzReacto
 
         [SerializeField]
         private GameObject dialogueBox;
+
+        [SerializeField]
+        private GameObject dialogBubble;
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.tag == "Player")
@@ -24,6 +27,7 @@ namespace PaperKiteStudios.BuzzReacto
             if (other.tag == "Player")
             {
                 interactable = false;
+                dialogBubble.SetActive(false);
             }
         }
 
@@ -33,6 +37,8 @@ namespace PaperKiteStudios.BuzzReacto
             {
                 if (GameManager.Instance.haspreMixedPotion == true)
                 {
+                    dialogBubble.SetActive(true);
+
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         dialogueBox.SetActive(true);
