@@ -20,6 +20,8 @@ namespace PaperKiteStudios.BuzzReacto
         [SerializeField]
         private GameObject cookedCarrot;
         [SerializeField]
+        private GameObject watterBottle;
+        [SerializeField]
         private GameObject carrot2CarrotImg;
         [SerializeField]
         private GameObject text;
@@ -72,6 +74,7 @@ namespace PaperKiteStudios.BuzzReacto
             {
                 button.SetActive(false);
                 cookedCarrot.SetActive(true);
+                watterBottle.SetActive(true);
                 arrowdown.SetActive(false);
                 StartCoroutine(TurnOffCarrot());
                 carrot2CarrotImg.SetActive(false);
@@ -92,9 +95,11 @@ namespace PaperKiteStudios.BuzzReacto
 
         IEnumerator TurnOffCarrot()
         {
-            yield return new WaitForSeconds(3.0f);
+            yield return new WaitForSeconds(5.0f);
             cookedCarrot.SetActive(false);
+            watterBottle.SetActive(false);
             Destroy(this.gameObject);
         }
+      
     }
 }

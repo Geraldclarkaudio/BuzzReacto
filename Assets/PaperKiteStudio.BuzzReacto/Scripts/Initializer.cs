@@ -23,7 +23,7 @@ namespace PaperKiteStudios.BuzzReacto
         
 
 
-        void Start()
+        void Awake()
         {
 #if UNITY_EDITOR
             ILOLSDK sdk = new LoLSDK.MockWebGL();
@@ -33,13 +33,17 @@ namespace PaperKiteStudios.BuzzReacto
             ILOLSDK sdk = null; // TODO COMING SOON IN V6
 #endif
             LOLSDK.Init(sdk, "com.PaperKiteStudios.BuzzReactoandtheTreeofLife");
-            LOLSDK.Instance.GameIsReady();
+            
 
             LOLSDK.Instance.StartGameReceived += new StartGameReceivedHandler(StartGame);
             LOLSDK.Instance.GameStateChanged += new GameStateChangedHandler(gameState => Debug.Log(gameState));
             LOLSDK.Instance.QuestionsReceived += new QuestionListReceivedHandler(questionList => Debug.Log(questionList));
             LOLSDK.Instance.LanguageDefsReceived += new LanguageDefsReceivedHandler(LanguageUpdate);
+            LOLSDK.Instance.GameIsReady();
+#if UNITY_EDITOR
             LoadMockData();
+#endif
+            //LOLSDK.Instance.GameIsReady();
             SceneManager.LoadScene("MainMenu");
             // Create the WebGL (or mock) object
             // This will all change in SDK V6 to be simplified and streamlined.
@@ -90,7 +94,7 @@ namespace PaperKiteStudios.BuzzReacto
 
         private void LoadMockData()
         {
-
+#if UNITY_EDITOR
             // Load Dev Language File from StreamingAssets
 
             string startDataFilePath = Path.Combine(Application.streamingAssetsPath, "startGame.json");
@@ -110,7 +114,7 @@ namespace PaperKiteStudios.BuzzReacto
                 LanguageUpdate(lang.ToString());
             }
         }
-
+#endif
     }
 }
 

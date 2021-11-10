@@ -1,0 +1,12 @@
+{
+  "_meta": {
+    "maxChars": {
+      "highlight": 10000
+    }
+  },
+
+  "languageCode": {
+
+    "startGame": "Start.."
+  }
+}
