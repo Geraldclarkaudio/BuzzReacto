@@ -94,7 +94,6 @@ namespace PaperKiteStudios.BuzzReacto
 
         private void LoadMockData()
         {
-#if UNITY_EDITOR
             // Load Dev Language File from StreamingAssets
 
             string startDataFilePath = Path.Combine(Application.streamingAssetsPath, "startGame.json");
@@ -114,7 +113,6 @@ namespace PaperKiteStudios.BuzzReacto
                 LanguageUpdate(lang.ToString());
             }
         }
-#endif
     }
 }
 
