@@ -9,17 +9,23 @@ namespace PaperKiteStudios.BuzzReacto
 {
     public class CutsceneText : MonoBehaviour
     {
-        public TextMeshProUGUI text1;
-        public TextMeshProUGUI text2;
-        public TextMeshProUGUI text3;
-        public TextMeshProUGUI text4;
-        public TextMeshProUGUI text5;
+        //public TextMeshProUGUI text1;
+        //public TextMeshProUGUI text2;
+        // public TextMeshProUGUI text3;
+        // public TextMeshProUGUI text4;
+        // public TextMeshProUGUI text5;
 
-        public string text1Text;
-        public string text2Text;
-        public string text3Text;
-        public string text4Text;
-        public string text5Text;
+
+
+        //public string text1Text;
+        //public string text2Text;
+        //public string text3Text;
+        //public string text4Text;
+        //public string text5Text;
+
+        public TextMeshProUGUI[] text;
+        public string[] key;
+        public int index;
 
         private Initializer init;
 
@@ -29,12 +35,30 @@ namespace PaperKiteStudios.BuzzReacto
         }
         // Start is called before the first frame update
         void Start()
-        {    
-            text1.text = init.GetText(text1Text);
-            text2.text = init.GetText(text2Text);
-            text3.text = init.GetText(text3Text);
-            text4.text = init.GetText(text4Text);
-            text5.text = init.GetText(text5Text);
+        {
+            text[index].text = init.GetText(key[index]);
+            LOLSDK.Instance.SpeakText(key[index]);
+            //text1.text = init.GetText(text1Text);      
+            //text2.text = init.GetText(text2Text);  
+            //text3.text = init.GetText(text3Text); 
+            //text4.text = init.GetText(text4Text);
+            //text5.text = init.GetText(text5Text);
         }
+
+        void Update()
+        {
+            if (text[index].text == init.GetText(key[index]))
+            {
+                if (index < key.Length - 1)
+                {
+                    index++;
+                    text[index].text = init.GetText(key[index]);
+       
+                }
+
+                
+            }
+        }
+
     }
 }

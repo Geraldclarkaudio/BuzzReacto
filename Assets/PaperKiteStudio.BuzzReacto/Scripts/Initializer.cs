@@ -44,7 +44,7 @@ namespace PaperKiteStudios.BuzzReacto
             LoadMockData();
 #endif
             //LOLSDK.Instance.GameIsReady();
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("PressToStart");
             // Create the WebGL (or mock) object
             // This will all change in SDK V6 to be simplified and streamlined.
 

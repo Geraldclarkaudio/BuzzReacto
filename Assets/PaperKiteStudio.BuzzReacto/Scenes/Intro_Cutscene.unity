@@ -501,16 +501,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e74a7bf3bf2385049ac7a9710bcc3da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text1: {fileID: 563377936}
-  text2: {fileID: 1249309258}
-  text3: {fileID: 1630880942}
-  text4: {fileID: 1257867691}
-  text5: {fileID: 0}
-  text1Text: scene01-0001
-  text2Text: scene01-0002
-  text3Text: scene01-0003
-  text4Text: scene01-0004
-  text5Text: 
+  text:
+  - {fileID: 563377936}
+  - {fileID: 1249309258}
+  - {fileID: 1630880942}
+  - {fileID: 1257867691}
+  key:
+  - scene01-0001
+  - scene01-0002
+  - scene01-0003
+  - scene01-0004
+  keyIndex: 0
+  textIndex: 0
 --- !u!4 &217071692
 Transform:
   m_ObjectHideFlags: 0

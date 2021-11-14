@@ -37,7 +37,7 @@ namespace PaperKiteStudios.BuzzReacto
                 }
                 else
                 {
-                    StopAllCoroutines();
+                    
                     textComponent.text = init.GetText(lines[index]);
                 }
             }
@@ -47,25 +47,19 @@ namespace PaperKiteStudios.BuzzReacto
         {
             index = 0;
             textComponent.text = init.GetText(lines[index]);
+            LOLSDK.Instance.SpeakText(lines[index]);
             //player.canMove = false;
             //StartCoroutine(TypeLine());
         }
 
-        IEnumerator TypeLine()
-        {
-            foreach(char c in init.GetText(lines[index]).ToCharArray())
-            {
-                textComponent.text += c;
-                yield return new WaitForSeconds(textSpeed);
-            }
-        }
         void NextLine()
         {
             if(index < lines.Length - 1)
             {
                 index++;
                 textComponent.text = init.GetText(lines[index]);
-               // StartCoroutine(TypeLine());
+                LOLSDK.Instance.SpeakText(lines[index]);
+                // StartCoroutine(TypeLine());
             }
             else
             {
