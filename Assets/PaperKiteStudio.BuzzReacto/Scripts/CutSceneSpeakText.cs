@@ -25,7 +25,7 @@ namespace PaperKiteStudios.BuzzReacto
         {
             
             text.text = init.GetText(key);
-            LOLSDK.Instance.SpeakText(text.text);
+            LOLSDK.Instance.SpeakText(key);
         }
 
     }
