@@ -10,6 +10,23 @@ using UnityEngine.UI;
 
 namespace PaperKiteStudios.BuzzReacto
 {
+    [System.Serializable]
+    public class PlayerData
+    {
+        public int level;
+        public float[] position;
+
+        public PlayerData (Player player)
+        {
+            level = player.level;
+            position = new float[3];
+
+            position[0] = player.transform.position.x;
+            position[1] = player.transform.position.y;
+            position[2] = player.transform.position.z;
+        }
+    }
+
     public class Initializer : MonoBehaviour
     {
 
@@ -20,6 +37,7 @@ namespace PaperKiteStudios.BuzzReacto
         JSONNode _langNode;
         string _langCode = "en";
 
+        [SerializeField, Header("State Data")] PlayerData playerData;
         
 
 
@@ -35,15 +53,18 @@ namespace PaperKiteStudios.BuzzReacto
             LOLSDK.Init(sdk, "com.PaperKiteStudios.BuzzReactoandtheTreeofLife");
             
 
+
             LOLSDK.Instance.StartGameReceived += new StartGameReceivedHandler(StartGame);
             LOLSDK.Instance.GameStateChanged += new GameStateChangedHandler(gameState => Debug.Log(gameState));
             LOLSDK.Instance.QuestionsReceived += new QuestionListReceivedHandler(questionList => Debug.Log(questionList));
             LOLSDK.Instance.LanguageDefsReceived += new LanguageDefsReceivedHandler(LanguageUpdate);
+            //yikes
+            LOLSDK.Instance.SaveResultReceived += OnSaveResult;
             LOLSDK.Instance.GameIsReady();
 #if UNITY_EDITOR
             LoadMockData();
 #endif
-            //LOLSDK.Instance.GameIsReady();
+          
             SceneManager.LoadScene("PressToStart");
             // Create the WebGL (or mock) object
             // This will all change in SDK V6 to be simplified and streamlined.
@@ -71,7 +92,7 @@ namespace PaperKiteStudios.BuzzReacto
 
             _langNode = JSON.Parse(langJSON);
 
-            TextDisplayUpdate();
+            //TextDisplayUpdate();
         }
 
         public string GetText(string key)
@@ -80,16 +101,19 @@ namespace PaperKiteStudios.BuzzReacto
             return value ?? "--missing--";
         }
 
-        // This could be done in a component with a listener attached to an lang change
-        // instead of coupling all the text to a controller class.
-        void TextDisplayUpdate()
-        {
+        //void TextDisplayUpdate()
+        //{
            
-        }
+        //}
 
-        void onload()
+        void onload(PlayerData loadedPlayerData)
         {
-            TextDisplayUpdate();
+            // Overrides serialized state data or continues with editor serialized values.
+            if(loadedPlayerData != null)
+            {
+                playerData = loadedPlayerData;
+            }
+            //TextDisplayUpdate();
         }
 
         private void LoadMockData()
@@ -112,6 +136,23 @@ namespace PaperKiteStudios.BuzzReacto
                 var lang = JSON.Parse(langDataAsJson)[_langCode];
                 LanguageUpdate(lang.ToString());
             }
+        }
+
+        //YIKES
+
+        void OnSaveResult(bool success)
+        {
+            if (!success)
+            {
+                Debug.LogWarning("Saving not successful");
+                return;
+            }
+        }
+
+        public void Save()
+        {
+            LOLSDK.Instance.SaveState(playerData);
+            Debug.Log("Saved!");
         }
     }
 }

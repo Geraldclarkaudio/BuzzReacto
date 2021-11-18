@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 using LoLSDK;
 
 namespace PaperKiteStudios.BuzzReacto
 {
     public class Player : MonoBehaviour
     {
+        public int level;
         private Rigidbody2D rb;
         [SerializeField]
         private float _jumpHeight = 5.0f;
@@ -78,7 +80,7 @@ namespace PaperKiteStudios.BuzzReacto
         void Update()
         {
             InventoryScreen();
-            PauseGame();
+           
 
             if (canMove == false)
             {
@@ -137,20 +139,6 @@ namespace PaperKiteStudios.BuzzReacto
             resetJumpNeeded = false;
         }
 
-        private void PauseGame()
-        {
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                _paused = true;
-                //uimanager stuff for pausing
-                //pause
-            }
-            if (_paused == true && Input.GetKeyDown(KeyCode.P))
-            {
-                //unpause
-            }
-        }
-
         private void InventoryScreen()
         {
             if (Input.GetKeyDown(KeyCode.I))
@@ -192,5 +180,6 @@ namespace PaperKiteStudios.BuzzReacto
 
             }
         }
+
     }
 }
