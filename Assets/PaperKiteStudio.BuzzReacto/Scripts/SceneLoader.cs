@@ -14,11 +14,5 @@ namespace PaperKiteStudios.BuzzReacto
         {
             SceneManager.LoadScene(sceneToLoad);
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 }

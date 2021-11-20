@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using LoLSDK;
+using UnityEngine.SceneManagement;
 
 namespace PaperKiteStudios.BuzzReacto
 {
@@ -23,6 +24,7 @@ namespace PaperKiteStudios.BuzzReacto
         }
 
         public Player _player { get; set; }
+       
 
         public bool hasWoodPlank { get; set; }
         public bool hasWaterBottle { get; set; }
@@ -48,6 +50,5 @@ namespace PaperKiteStudios.BuzzReacto
             }
             DontDestroyOnLoad(this.gameObject);
         }
-
     }
 }

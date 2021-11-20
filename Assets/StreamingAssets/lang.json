@@ -7,6 +7,8 @@
   "en": {
     "InitializeText": "Initializing...",
     "StartButton": "START",
+    "newGame": "NEW GAME",
+    "continueGame": "CONTINUE",
     "interactPrompt": "Press E to interact",
     "spacePress": "Press Space or Tap Screen to Begin",
     "torchLesson": "Awesome! Now I have a flame to melt the ice with. The temperature change in the wood is what caused the chemical reaction to take place which created a flame!",

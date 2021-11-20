@@ -10,6 +10,9 @@ namespace PaperKiteStudios.BuzzReacto
         [SerializeField]
         private GameObject pauseMenu;
 
+        [SerializeField]
+        private GameObject dialogue;
+
         private Initializer init;
 
         private bool gameIsPaused = false;
@@ -38,6 +41,7 @@ namespace PaperKiteStudios.BuzzReacto
         public void Resume()
         {
             pauseMenu.SetActive(false);
+            dialogue.SetActive(true);
             Time.timeScale = 1f;
             gameIsPaused = false;
         }
@@ -45,6 +49,7 @@ namespace PaperKiteStudios.BuzzReacto
         void Pause()
         {
             pauseMenu.SetActive(true);
+            dialogue.SetActive(false);
             Time.timeScale = 0f;
             gameIsPaused = true;
         }

@@ -5,6 +5,7 @@ using LoLSDK;
 
 namespace PaperKiteStudios.BuzzReacto
 {
+    
     public class ProgressPoint : MonoBehaviour
     {
         private void OnTriggerEnter(Collider other)

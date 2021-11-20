@@ -42,7 +42,7 @@ namespace PaperKiteStudios.BuzzReacto
 
                     else if (GameManager.Instance.hasTreePotion == false)
                     {
-                        //how the hell did we get here?
+                        
                     }
 
                 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 
@@ -11,6 +12,7 @@ namespace PaperKiteStudios.BuzzReacto
     public class Player : MonoBehaviour
     {
         public int level;
+
         private Rigidbody2D rb;
         [SerializeField]
         private float _jumpHeight = 5.0f;
@@ -43,12 +45,11 @@ namespace PaperKiteStudios.BuzzReacto
         [SerializeField]
         private GameObject dialog;
 
-
-
         // Start is called before the first frame update
         void Start()
         {
             jellyCount = 0;
+
 
             _uiManager = GameObject.Find("UI_Manager").GetComponent<UIManager>();
             if (_uiManager == null)
@@ -90,7 +91,7 @@ namespace PaperKiteStudios.BuzzReacto
             {
                 Movement();
             }
-            
+
         }
 
         public void Movement()
@@ -181,5 +182,9 @@ namespace PaperKiteStudios.BuzzReacto
             }
         }
 
+
+
     }
+
+   
 }

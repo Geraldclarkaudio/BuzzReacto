@@ -14,17 +14,6 @@ namespace PaperKiteStudios.BuzzReacto
     public class PlayerData
     {
         public int level;
-        public float[] position;
-
-        public PlayerData (Player player)
-        {
-            level = player.level;
-            position = new float[3];
-
-            position[0] = player.transform.position.x;
-            position[1] = player.transform.position.y;
-            position[2] = player.transform.position.z;
-        }
     }
 
     public class Initializer : MonoBehaviour
@@ -38,7 +27,9 @@ namespace PaperKiteStudios.BuzzReacto
         string _langCode = "en";
 
         [SerializeField, Header("State Data")] PlayerData playerData;
-        
+        [SerializeField] Button continueButton, newGameButton;
+        [SerializeField] TextMeshProUGUI newGameText, continueText;
+
 
 
         void Awake()
@@ -62,19 +53,43 @@ namespace PaperKiteStudios.BuzzReacto
             LOLSDK.Instance.SaveResultReceived += OnSaveResult;
             LOLSDK.Instance.GameIsReady();
 #if UNITY_EDITOR
+            UnityEditor.EditorGUIUtility.PingObject(this);
             LoadMockData();
 #endif
           
-            SceneManager.LoadScene("PressToStart");
+            
             // Create the WebGL (or mock) object
             // This will all change in SDK V6 to be simplified and streamlined.
+            Helper.StateButtonInitialize<PlayerData>(newGameButton, continueButton, onload);
 
-#if UNITY_EDITOR
-            UnityEditor.EditorGUIUtility.PingObject(this);
-#endif
+    
         }
 
-        void StartGame(string startGameJSON)
+        private void OnDestroy()
+        {
+#if UNITY_EDITOR
+            if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
+                return;
+#endif
+            LOLSDK.Instance.SaveResultReceived -= OnSaveResult;
+        }
+
+        public void Save()
+        {
+            LOLSDK.Instance.SaveState(playerData);
+        }
+
+        void OnSaveResult(bool success)
+        {
+            if (!success)
+            {
+                Debug.LogWarning("Saving not successful");
+                return;
+            }
+        }
+
+
+            void StartGame(string startGameJSON)
         {
             if (string.IsNullOrEmpty(startGameJSON))
                 return;
@@ -92,7 +107,7 @@ namespace PaperKiteStudios.BuzzReacto
 
             _langNode = JSON.Parse(langJSON);
 
-            //TextDisplayUpdate();
+            TextDisplayUpdate();
         }
 
         public string GetText(string key)
@@ -101,21 +116,52 @@ namespace PaperKiteStudios.BuzzReacto
             return value ?? "--missing--";
         }
 
-        //void TextDisplayUpdate()
-        //{
-           
-        //}
+        void TextDisplayUpdate()
+        {
+            newGameText.text = GetText("newGame");
+            continueText.text = GetText("continueGame");
+        }
 
-        void onload(PlayerData loadedPlayerData)
+        public void onload(PlayerData loadedPlayerData)
         {
             // Overrides serialized state data or continues with editor serialized values.
             if(loadedPlayerData != null)
             {
                 playerData = loadedPlayerData;
             }
-            //TextDisplayUpdate();
-        }
 
+            if(playerData.level == 1)
+            {
+                loadedPlayerData.level = 1;
+                SceneManager.LoadScene("Gas");
+            }
+            if(playerData.level == 2)
+            {
+                loadedPlayerData.level = 2;
+                SceneManager.LoadScene("Cave");
+            }
+            if (playerData.level == 3)
+            {
+                loadedPlayerData.level = 3;
+                SceneManager.LoadScene("Rabbit_Rescued");
+            }
+            if (playerData.level == 4)
+            {
+                loadedPlayerData.level = 4;
+                SceneManager.LoadScene("Bugs_Scene");
+            }
+            if (playerData.level == 5)
+            {
+                loadedPlayerData.level = 5;
+                SceneManager.LoadScene("Stir");
+            }
+
+
+            TextDisplayUpdate();
+
+            _init = true;
+        }
+#if UNITY_EDITOR
         private void LoadMockData()
         {
             // Load Dev Language File from StreamingAssets
@@ -137,22 +183,16 @@ namespace PaperKiteStudios.BuzzReacto
                 LanguageUpdate(lang.ToString());
             }
         }
-
-        //YIKES
-
-        void OnSaveResult(bool success)
+#endif
+        public void StartedGame()
         {
-            if (!success)
-            {
-                Debug.LogWarning("Saving not successful");
-                return;
-            }
+            SceneManager.LoadScene("MainMenu");
         }
 
-        public void Save()
+        public void SceneChanged()
         {
-            LOLSDK.Instance.SaveState(playerData);
-            Debug.Log("Saved!");
+            playerData.level++;
+            Save();
         }
     }
 }

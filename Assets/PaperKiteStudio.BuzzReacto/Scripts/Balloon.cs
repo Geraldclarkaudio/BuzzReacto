@@ -19,11 +19,13 @@ namespace PaperKiteStudios.BuzzReacto
         private float _speed = 3f;
 
         private Rigidbody2D rb;
+        
 
         // Start is called before the first frame update
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
+            
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -50,7 +52,8 @@ namespace PaperKiteStudios.BuzzReacto
         IEnumerator LoadingScene()
         {
             yield return new WaitForSeconds(2.0f);
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene("Gas");
+            
         }
     }
 }
