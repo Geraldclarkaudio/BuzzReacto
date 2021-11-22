@@ -13,15 +13,21 @@ namespace PaperKiteStudios.BuzzReacto
 
         public int jellys;
 
+        private AudioManager audioManager;
+
+
         private void Start()
         {
             player = GameObject.Find("Player").GetComponent<Player>();
+            audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.tag == "Player")
             {
+                audioManager.PlayCollectedSound();
+
                 Destroy(this.gameObject);
 
                 ///GAS SCENE::::::::::::::::::::::::::::::::::::::::::

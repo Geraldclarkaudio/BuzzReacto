@@ -6,7 +6,7 @@
   },
   "en": {
     "InitializeText": "Initializing...",
-    "StartButton": "START",
+    "StartButton": "PLAY",
     "newGame": "NEW GAME",
     "continueGame": "CONTINUE",
     "interactPrompt": "Press E to interact",

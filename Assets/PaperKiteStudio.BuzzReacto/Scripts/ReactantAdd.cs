@@ -6,6 +6,7 @@ namespace PaperKiteStudios.BuzzReacto
 {
     public class ReactantAdd : MonoBehaviour
     {
+        private AudioManager audioManager;
         [SerializeField]
         private GameObject bubbles;
         [SerializeField]
@@ -18,6 +19,11 @@ namespace PaperKiteStudios.BuzzReacto
 
         [SerializeField]
         private GameObject dialog3;
+
+        private void Start()
+        {
+            audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        }
 
         public void VinegarAdded()
         {
@@ -46,6 +52,8 @@ namespace PaperKiteStudios.BuzzReacto
                 BakingSodaAddVinegar();
                 productText.SetActive(false);
                 GameManager.Instance.hasFuel = true;
+                bakingSodaAdded = false;
+                vinegarAdded = false;
             }
 
             if (solution1Added == true && solution2Added == true)
@@ -61,12 +69,14 @@ namespace PaperKiteStudios.BuzzReacto
         {
             bubbles.SetActive(true);
             dialog3.SetActive(true);
-
+            audioManager.PlayCombinedItemsSound();
         }
 
         public void TreePotion()
         {
             treePotion.SetActive(true);
+            audioManager.PlayCombinedItemsSound();
+
         }
     }
 }

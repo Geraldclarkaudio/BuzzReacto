@@ -22,9 +22,6 @@ namespace PaperKiteStudios.BuzzReacto
         [SerializeField]
         private GameObject bakingSodaUI, vinegarUI, waterBottleUI, woodPlankUI;
 
-        // [SerializeField]
-        // private GameObject gameOverButton;
-
         public void InventoryActive()
         {
             if (inventoryActive == false)
