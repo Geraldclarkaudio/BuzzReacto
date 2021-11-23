@@ -10,6 +10,8 @@ namespace PaperKiteStudios.BuzzReacto
     {
         [SerializeField]
         private GameObject dialogBubble;
+        [SerializeField]
+        private GameObject needFuelBubble;
 
         public bool interactable = false;
         private void OnTriggerEnter2D(Collider2D other)
@@ -21,6 +23,10 @@ namespace PaperKiteStudios.BuzzReacto
                 {
                     dialogBubble.SetActive(true);
                 }
+                else if(GameManager.Instance.hasFuel == false)
+                {
+                    needFuelBubble.SetActive(true);
+                }
             }
         }
         private void OnTriggerExit2D(Collider2D other)
@@ -29,6 +35,7 @@ namespace PaperKiteStudios.BuzzReacto
             {
                 interactable = false;
                 dialogBubble.SetActive(false);
+                needFuelBubble.SetActive(false);
             }
         }
 
@@ -48,6 +55,7 @@ namespace PaperKiteStudios.BuzzReacto
             }
             else if (GameManager.Instance.hasFuel == false && interactable == true)
             {
+
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     //dialogue box that says "I need to find baking soda and vinegar. This will power my balloon."

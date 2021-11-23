@@ -13,7 +13,7 @@ namespace PaperKiteStudios.BuzzReacto
     {
         
         private Initializer init;
-        //private Player player;
+        private Player player;
         public TextMeshProUGUI textComponent;
         public string[] lines;
         public float textSpeed;
@@ -22,7 +22,7 @@ namespace PaperKiteStudios.BuzzReacto
         {
            
             init = GameObject.Find("App").GetComponent<Initializer>();
-            //player = GameObject.Find("Player").GetComponent<Player>();
+            player = GameObject.Find("Player").GetComponent<Player>();
             textComponent.text = init.GetText(lines[index]);
             StartDialogue();
         }
@@ -48,7 +48,7 @@ namespace PaperKiteStudios.BuzzReacto
             index = 0;
             textComponent.text = init.GetText(lines[index]);
             LOLSDK.Instance.SpeakText(lines[index]);
-            //player.canMove = false;
+            player.canMove = false;
             //StartCoroutine(TypeLine());
         }
 
@@ -63,7 +63,7 @@ namespace PaperKiteStudios.BuzzReacto
             }
             else
             {
-              //  player.canMove = true;
+                player.canMove = true;
                 gameObject.SetActive(false);
             }
         }
