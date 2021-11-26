@@ -12,6 +12,7 @@ namespace PaperKiteStudios.BuzzReacto
         private GameObject dialogBubble;
         [SerializeField]
         private GameObject needFuelBubble;
+        public int currentProgress;
 
         public bool interactable = false;
         private void OnTriggerEnter2D(Collider2D other)
@@ -67,7 +68,7 @@ namespace PaperKiteStudios.BuzzReacto
 
         IEnumerator LoadingScene()
         {
-            LOLSDK.Instance.SubmitProgress(0, 0, 0);
+            LOLSDK.Instance.SubmitProgress(0, currentProgress, 0);
             yield return new WaitForSeconds(1.5f);
             //load scene
             SceneManager.LoadScene("FloatUp_Scene");

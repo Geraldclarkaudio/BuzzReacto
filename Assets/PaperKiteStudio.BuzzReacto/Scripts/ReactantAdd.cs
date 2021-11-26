@@ -61,6 +61,8 @@ namespace PaperKiteStudios.BuzzReacto
                 TreePotion();
                 productText.SetActive(false);
                 GameManager.Instance.haspreMixedPotion = true;
+                solution1Added = false;
+                solution2Added = false;
             }
         }
 
@@ -76,7 +78,6 @@ namespace PaperKiteStudios.BuzzReacto
         {
             treePotion.SetActive(true);
             audioManager.PlayCombinedItemsSound();
-
         }
     }
 }

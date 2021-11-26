@@ -3827,6 +3827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b09c60036ecb2e46be5ca269ed21747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentProgress: 6
 --- !u!4 &936811636
 Transform:
   m_ObjectHideFlags: 0
@@ -3897,6 +3898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b09c60036ecb2e46be5ca269ed21747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentProgress: 7
 --- !u!4 &941722681
 Transform:
   m_ObjectHideFlags: 0

@@ -182,6 +182,11 @@ namespace PaperKiteStudios.BuzzReacto
             }
         }
 
+        public void EndGame()
+        {
+            LOLSDK.Instance.CompleteGame();
+        }
+
 
 
     }

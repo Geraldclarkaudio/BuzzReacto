@@ -8,11 +8,13 @@ namespace PaperKiteStudios.BuzzReacto
     
     public class ProgressPoint : MonoBehaviour
     {
+        public int currentProgress;
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.tag == "Player")
             {
-                LOLSDK.Instance.SubmitProgress(0, 0, 0);
+                LOLSDK.Instance.SubmitProgress(0, currentProgress, 10);
                 Destroy(this.gameObject);
             }
         }

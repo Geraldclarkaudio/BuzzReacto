@@ -15,6 +15,9 @@ public class AudioManager : MonoBehaviour
    
     public AudioClip[] footSteps;
 
+    [Header("Enemy Sounds")]
+    public AudioClip enemyDestroySound;
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -38,6 +41,14 @@ public class AudioManager : MonoBehaviour
     public void FootSteps()
     {
         audioSource.clip = footSteps[Random.Range(0,3)];
+        audioSource.Play();
+    }
+    #endregion
+
+    #region ENEMY SOUNDS
+    public void EnemyDestroyed()
+    {
+        audioSource.clip = enemyDestroySound;
         audioSource.Play();
     }
     #endregion

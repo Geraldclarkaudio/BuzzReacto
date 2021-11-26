@@ -271,6 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b09c60036ecb2e46be5ca269ed21747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentProgress: 1
 --- !u!4 &64264844
 Transform:
   m_ObjectHideFlags: 0
@@ -1609,6 +1610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogBubble: {fileID: 1129468474}
   needFuelBubble: {fileID: 165099966}
+  currentProgress: 2
   interactable: 0
 --- !u!1 &405898053
 GameObject:
@@ -6932,6 +6934,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2a28acfae636ceb4cb856ddad9199f42, type: 3}
   - {fileID: 8300000, guid: 79d73d152afc36944a8b3831cbb1040f, type: 3}
   - {fileID: 8300000, guid: 2f54780c33eaa9345b1095cf8865eede, type: 3}
+  enemyDestroySound: {fileID: 0}
 --- !u!4 &1689751159
 Transform:
   m_ObjectHideFlags: 0
