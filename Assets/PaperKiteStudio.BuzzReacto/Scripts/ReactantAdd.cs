@@ -20,6 +20,8 @@ namespace PaperKiteStudios.BuzzReacto
         [SerializeField]
         private GameObject dialog3;
 
+   
+
         private void Start()
         {
             audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
@@ -28,20 +30,27 @@ namespace PaperKiteStudios.BuzzReacto
         public void VinegarAdded()
         {
             vinegarAdded = true;
+            audioManager.PlayDropSound();
         }
 
         public void BakingSodaAdded()
         {
             bakingSodaAdded = true;
+            audioManager.PlayDropSound();
         }
 
         public void Solution1Added()
         {
             solution1Added = true;
+            audioManager.PlayDropSound();
+
+
         }
         public void Solution2Added()
         {
             solution2Added = true;
+            audioManager.PlayDropSound();
+
         }
 
         private void Update()

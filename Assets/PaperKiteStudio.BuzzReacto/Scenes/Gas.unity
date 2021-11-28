@@ -246,7 +246,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 7.7729397}
+  m_Offset: {x: 0.19452858, y: 7.7729397}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -257,7 +257,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 18.360058}
+  m_Size: {x: 1.3890572, y: 18.360058}
   m_EdgeRadius: 0
 --- !u!114 &64264843
 MonoBehaviour:
@@ -6929,12 +6929,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectedItemSound: {fileID: 8300000, guid: 2a82c8f374c2bbc4e90aa1f152703ffa, type: 3}
   combinedItemsSound: {fileID: 8300000, guid: d6aac3d3f2b635c408b6ee63a2839a97, type: 3}
+  droppedItem: {fileID: 8300000, guid: 5f296a8cfa453264eb37e5e79c9d475a, type: 3}
   footSteps:
   - {fileID: 8300000, guid: 148ef7b74ada38641a3dd8073d8e88e3, type: 3}
   - {fileID: 8300000, guid: 2a28acfae636ceb4cb856ddad9199f42, type: 3}
   - {fileID: 8300000, guid: 79d73d152afc36944a8b3831cbb1040f, type: 3}
   - {fileID: 8300000, guid: 2f54780c33eaa9345b1095cf8865eede, type: 3}
-  enemyDestroySound: {fileID: 0}
+  enemyDestroySound: {fileID: 8300000, guid: 5ef17bc52a42bf64983026ce1b8bc032, type: 3}
 --- !u!4 &1689751159
 Transform:
   m_ObjectHideFlags: 0

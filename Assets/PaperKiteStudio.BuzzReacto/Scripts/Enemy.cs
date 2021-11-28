@@ -22,12 +22,15 @@ namespace PaperKiteStudios.BuzzReacto
         [SerializeField]
         private GameObject jellyPrefab;
 
+        private AudioManager audioManager;
+
         private void Start()
         {
             _anim = GetComponent<Animator>();
             _sprite = GetComponent<SpriteRenderer>();
             playerRB = GameObject.Find("Player").GetComponent<Rigidbody2D>();
             col = GetComponent<BoxCollider2D>();
+            audioManager = GameObject.Find("App").GetComponent<AudioManager>();
 
 
         }
@@ -37,6 +40,7 @@ namespace PaperKiteStudios.BuzzReacto
             if(other.tag == "PlayerHitBox")
             {
                 playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y + 20f);
+                audioManager.EnemyDestroyed();
                 Instantiate(jellyPrefab, transform.position, Quaternion.identity);
                 Destroy(col);
                 Destroy(this.gameObject, 1f);

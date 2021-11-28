@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip collectedItemSound;
     public AudioClip combinedItemsSound;
+    public AudioClip droppedItem;
 
     [Header("Player Sounds")]
    
@@ -35,12 +36,10 @@ public class AudioManager : MonoBehaviour
         audioSource.clip = combinedItemsSound;
         audioSource.Play();
     }
-    #endregion
 
-    #region PLAYER SOUNDS
-    public void FootSteps()
+    public void PlayDropSound()
     {
-        audioSource.clip = footSteps[Random.Range(0,3)];
+        audioSource.clip = droppedItem;
         audioSource.Play();
     }
     #endregion

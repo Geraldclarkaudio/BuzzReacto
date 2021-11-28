@@ -10,11 +10,12 @@ namespace PaperKiteStudios.BuzzReacto
     {
         public int currentProgress;
 
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.tag == "Player")
             {
-                LOLSDK.Instance.SubmitProgress(0, currentProgress, 10);
+               LOLSDK.Instance.SubmitProgress(0, currentProgress, 8);
+                Debug.Log("Submitted some dang ol progress");
                 Destroy(this.gameObject);
             }
         }
