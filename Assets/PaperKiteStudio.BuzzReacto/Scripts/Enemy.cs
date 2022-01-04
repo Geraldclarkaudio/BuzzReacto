@@ -30,15 +30,14 @@ namespace PaperKiteStudios.BuzzReacto
             _sprite = GetComponent<SpriteRenderer>();
             playerRB = GameObject.Find("Player").GetComponent<Rigidbody2D>();
             col = GetComponent<BoxCollider2D>();
-            audioManager = GameObject.Find("App").GetComponent<AudioManager>();
-
-
+            audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
             if(other.tag == "PlayerHitBox")
             {
+                Debug.Log("Collide!@ Collidiididide");
                 playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y + 20f);
                 audioManager.EnemyDestroyed();
                 Instantiate(jellyPrefab, transform.position, Quaternion.identity);

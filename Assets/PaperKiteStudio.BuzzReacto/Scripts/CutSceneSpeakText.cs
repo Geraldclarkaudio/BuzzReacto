@@ -23,7 +23,6 @@ namespace PaperKiteStudios.BuzzReacto
         // Start is called before the first frame update
         void Start()
         {
-            
             text.text = init.GetText(key);
             LOLSDK.Instance.SpeakText(key);
         }

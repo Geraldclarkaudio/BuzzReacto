@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using LoLSDK;
+using UnityEngine.SceneManagement;
 
 namespace PaperKiteStudios.BuzzReacto {
     public class SceneChanged : MonoBehaviour
@@ -9,14 +10,18 @@ namespace PaperKiteStudios.BuzzReacto {
         
 
         private Initializer init;
+        
 
         private void Start()
         {
-            init = GameObject.Find("App").GetComponent<Initializer>();
-            
-            init.SceneChanged();          
-        }
+            Scene scene = SceneManager.GetActiveScene();
+            Debug.Log("Active Scene is " + scene.name);
 
+            init = GameObject.Find("App").GetComponent<Initializer>();
+
+            init.SceneChanged();        
+            
+        }
 
     }
 }

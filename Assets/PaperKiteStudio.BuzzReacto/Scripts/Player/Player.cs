@@ -85,6 +85,9 @@ namespace PaperKiteStudios.BuzzReacto
 
             if (canMove == false)
             {
+                _anim.SetFloat("Move", 0);
+                _robotAnimLF.SetFloat("Move", 0);
+                _robotAnimRF.SetFloat("Move", 0);
                 return;
             }
             else if(canMove==true)
@@ -108,11 +111,23 @@ namespace PaperKiteStudios.BuzzReacto
                 StartCoroutine(WaitForGrounded());
             }
             //MOVE=======================
-            rb.velocity = new Vector2(horizontalInput * _speed, rb.velocity.y);
-            _anim.SetFloat("Move", Mathf.Abs(horizontalInput));
+            if(Grounded() == false)
+            {
+                return;
+            }
+            else if(Grounded() == true)
+            {
+                rb.velocity = new Vector2(horizontalInput * _speed, rb.velocity.y);
+                _anim.SetFloat("Move", Mathf.Abs(horizontalInput));
 
-            _robotAnimLF.SetFloat("Move", Mathf.Abs(horizontalInput));
-            _robotAnimRF.SetFloat("Move", Mathf.Abs(horizontalInput));
+                _robotAnimLF.SetFloat("Move", Mathf.Abs(horizontalInput));
+                _robotAnimRF.SetFloat("Move", Mathf.Abs(horizontalInput));
+            }
+            //rb.velocity = new Vector2(horizontalInput * _speed, rb.velocity.y);
+            //_anim.SetFloat("Move", Mathf.Abs(horizontalInput));
+
+            //_robotAnimLF.SetFloat("Move", Mathf.Abs(horizontalInput));
+            //_robotAnimRF.SetFloat("Move", Mathf.Abs(horizontalInput));
         }
 
         public bool Grounded()

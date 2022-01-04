@@ -124,36 +124,42 @@ namespace PaperKiteStudios.BuzzReacto
 
         public void onload(PlayerData loadedPlayerData)
         {
+
             // Overrides serialized state data or continues with editor serialized values.
-            if(loadedPlayerData != null)
+            if (loadedPlayerData != null)
             {
-                playerData = loadedPlayerData;
+               playerData = loadedPlayerData;
             }
 
-            if(playerData.level == 1)
+            if (playerData.level == 1)
             {
                 loadedPlayerData.level = 1;
                 SceneManager.LoadScene("Gas");
+                Save();
             }
-            if(playerData.level == 2)
+            if (playerData.level == 2)
             {
                 loadedPlayerData.level = 2;
                 SceneManager.LoadScene("Cave");
+                Save();
             }
             if (playerData.level == 3)
             {
                 loadedPlayerData.level = 3;
                 SceneManager.LoadScene("Rabbit_Rescued");
+                Save();
             }
             if (playerData.level == 4)
             {
                 loadedPlayerData.level = 4;
                 SceneManager.LoadScene("Bugs_Scene");
+                Save();
             }
             if (playerData.level == 5)
             {
                 loadedPlayerData.level = 5;
                 SceneManager.LoadScene("Stir");
+                Save();
             }
 
 
@@ -191,7 +197,35 @@ namespace PaperKiteStudios.BuzzReacto
 
         public void SceneChanged()
         {
-            playerData.level++;
+            //I need to say if Active Scene is "gas" playerdata.level = 1 and so on and so forth.
+            Scene scene = SceneManager.GetActiveScene();
+            Debug.Log("Active Scene is " + scene.name);
+            
+            if(scene.name == "Gas")
+            {
+                playerData.level = 1;
+            }
+            
+            if(scene.name == "Cave")
+            {
+                playerData.level = 2;
+            }
+
+            if(scene.name == "Rabbit_Rescued")
+            {
+                playerData.level = 3;
+            }
+
+            if(scene.name == "Bugs_Scene")
+            {
+                playerData.level = 4;
+            }
+
+            if(scene.name == "Stir")
+            {
+                playerData.level = 5;
+            }    
+            
             Save();
         }
     }

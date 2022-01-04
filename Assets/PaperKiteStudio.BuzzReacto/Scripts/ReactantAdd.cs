@@ -43,8 +43,6 @@ namespace PaperKiteStudios.BuzzReacto
         {
             solution1Added = true;
             audioManager.PlayDropSound();
-
-
         }
         public void Solution2Added()
         {
