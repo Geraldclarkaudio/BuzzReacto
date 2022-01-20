@@ -478,10 +478,14 @@ MonoBehaviour:
   lines:
   - finalScene-0002
   textSpeed: 0.03
-  icon1: {fileID: 0}
-  icon2: {fileID: 0}
-  icon3: {fileID: 0}
-  icon4: {fileID: 0}
+  icons:
+  - {fileID: 1550785835}
+  woodDialogBox: {fileID: 1172625741}
+  torchDialogBox: {fileID: 345102287}
+  peteDialogBox: {fileID: 0}
+  carrotDialogBox: {fileID: 0}
+  photosynthDialogBox: {fileID: 0}
+  postPhotoDialogBox: {fileID: 0}
 --- !u!114 &345102290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1265,6 +1269,80 @@ Transform:
   m_Father: {fileID: 1259683314}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &845341346
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 845341347}
+  - component: {fileID: 845341349}
+  - component: {fileID: 845341348}
+  m_Layer: 5
+  m_Name: Pete
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &845341347
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845341346}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.1810912, y: 1.1810912, z: 1.1810912}
+  m_Children: []
+  m_Father: {fileID: 912553503}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -421.7, y: -199.69998}
+  m_SizeDelta: {x: 220.0904, y: 238.60583}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &845341348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845341346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 66b28e53ef26aef46b8110651f59478e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &845341349
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845341346}
+  m_CullTransparentMesh: 0
 --- !u!1 &849053136
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,6 +1672,9 @@ RectTransform:
   - {fileID: 1172625742}
   - {fileID: 345102288}
   - {fileID: 1740734012}
+  - {fileID: 1609898533}
+  - {fileID: 1550785836}
+  - {fileID: 845341347}
   m_Father: {fileID: 647189090}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2103,10 +2184,14 @@ MonoBehaviour:
   lines:
   - finalScene-0001
   textSpeed: 0.03
-  icon1: {fileID: 0}
-  icon2: {fileID: 0}
-  icon3: {fileID: 0}
-  icon4: {fileID: 0}
+  icons:
+  - {fileID: 1550785835}
+  woodDialogBox: {fileID: 1172625741}
+  torchDialogBox: {fileID: 345102287}
+  peteDialogBox: {fileID: 1740734011}
+  carrotDialogBox: {fileID: 0}
+  photosynthDialogBox: {fileID: 0}
+  postPhotoDialogBox: {fileID: 0}
 --- !u!114 &1172625744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2784,6 +2869,154 @@ Transform:
   m_Father: {fileID: 1259683314}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1550785835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1550785836}
+  - component: {fileID: 1550785838}
+  - component: {fileID: 1550785837}
+  m_Layer: 5
+  m_Name: Tree
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1550785836
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550785835}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.181081, y: 1.181081, z: 1.181081}
+  m_Children: []
+  m_Father: {fileID: 912553503}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -404.00003, y: -193}
+  m_SizeDelta: {x: 120, y: 120}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1550785837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550785835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 55db1e95f4000ca4fbf90377f3a3f2e1, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1550785838
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550785835}
+  m_CullTransparentMesh: 0
+--- !u!1 &1609898532
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1609898533}
+  - component: {fileID: 1609898535}
+  - component: {fileID: 1609898534}
+  m_Layer: 5
+  m_Name: Buzz
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1609898533
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609898532}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.181081, y: 1.181081, z: 1.181081}
+  m_Children: []
+  m_Father: {fileID: 912553503}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -404.00003, y: -193}
+  m_SizeDelta: {x: 250, y: 250}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1609898534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609898532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: ee8711f8c5c19f548ba2f43bfcbd5cdc, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1609898535
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609898532}
+  m_CullTransparentMesh: 0
 --- !u!1 &1626964771
 GameObject:
   m_ObjectHideFlags: 0
@@ -3059,10 +3292,15 @@ MonoBehaviour:
   - finalScene-0003
   - finalScene-0004
   textSpeed: 0.03
-  icon1: {fileID: 0}
-  icon2: {fileID: 0}
-  icon3: {fileID: 0}
-  icon4: {fileID: 0}
+  icons:
+  - {fileID: 1609898532}
+  - {fileID: 845341346}
+  woodDialogBox: {fileID: 1172625741}
+  torchDialogBox: {fileID: 345102287}
+  peteDialogBox: {fileID: 1740734011}
+  carrotDialogBox: {fileID: 0}
+  photosynthDialogBox: {fileID: 0}
+  postPhotoDialogBox: {fileID: 0}
 --- !u!114 &1740734014
 MonoBehaviour:
   m_ObjectHideFlags: 0

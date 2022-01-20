@@ -34,6 +34,25 @@ namespace PaperKiteStudios.BuzzReacto
                 {
                     reactantAdd.BakingSodaAdded();
                 }
+
+                if(eventData.pointerDrag.tag == "h2oUI")
+                {
+                    reactantAdd.h2oAdded();
+                }
+                if (eventData.pointerDrag.tag == "co2UI")
+                {
+                    reactantAdd.CarbonDioxideAdded();
+                }
+
+                if (eventData.pointerDrag.tag == "LavaUI")
+                {
+                    reactantAdd.LavaAdded();
+                }
+                if (eventData.pointerDrag.tag == "WoodUI")
+                {
+                    reactantAdd.WoodAdded();
+                }
+
                 if (eventData.pointerDrag.tag == "Solution1")
                 {
                     reactantAdd.Solution1Added();

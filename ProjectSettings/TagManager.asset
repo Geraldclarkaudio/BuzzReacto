@@ -15,6 +15,16 @@ TagManager:
   - Solution2
   - PlayerHitBox
   - FellOff
+  - Laser
+  - Ship
+  - o2
+  - Enemy
+  - Water
+  - co2UI
+  - h2oUI
+  - WoodUI
+  - LavaUI
+  - Sania
   layers:
   - Default
   - TransparentFX

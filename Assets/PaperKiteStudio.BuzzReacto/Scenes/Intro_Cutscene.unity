@@ -1665,7 +1665,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -310.1, y: -278}
+  m_AnchoredPosition: {x: -393, y: -212}
   m_SizeDelta: {x: 220, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &808759716
@@ -1900,7 +1900,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -320.07382, y: -133.46251}
+  m_AnchoredPosition: {x: -327, y: -133.46251}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &861677283
@@ -3464,6 +3464,13 @@ MonoBehaviour:
   - scene01-0003
   - scene01-0004
   textSpeed: 0.03
+  icons: []
+  woodDialogBox: {fileID: 0}
+  torchDialogBox: {fileID: 0}
+  peteDialogBox: {fileID: 0}
+  carrotDialogBox: {fileID: 0}
+  photosynthDialogBox: {fileID: 0}
+  postPhotoDialogBox: {fileID: 0}
 --- !u!114 &1759890758
 MonoBehaviour:
   m_ObjectHideFlags: 0

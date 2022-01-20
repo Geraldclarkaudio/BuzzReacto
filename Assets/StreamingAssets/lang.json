@@ -11,6 +11,29 @@
     "continueGame": "CONTINUE",
     "interactPrompt": "Press E to interact",
     "NeedFuel": "Combine reactants to create fuel (Press I)",
+
+    "combatSceneS1": "We are finally back at it SANIA! Lets do a little bit of cleaning up. Destroying pollution is what we do best!",
+    "combatSceneS2": "Lets collect some of the Carbon Dioxide these soda cans generate after they're destroyed as well as the H20 from the water bottles. You never know when you will need water!",
+    "combatSceneS3": "Alright! Lets go!",
+
+    "combatscene4": "We have collected 10 of each! This should be plenty. Lets head down to continue searching for the ingredients for the tree's potion.",
+
+    "photosynthesis1": "Wow! Check it out. A tiny tree is sprouting in this cave.",
+    "photosynthesis2": "Yes Hello!",
+    "photosynthesis3": "Another talking tree!",
+    "photosynthesis4": "I am very hungry! I have no carbon dioxide or water in here! Its all ice!",
+    "photosynthesis5": "SANIA...we have the ingredients necessary to cause photosynhesis to take place. Maybe we can help this tree out.",
+    "photosynthesis6": "In photosynthesis, plants make the simple sugar, glucose (C6H12O6) from carbon dioxide (CO2), and water (H2O). They also release oxygen (O2) in the process.",
+    "photosynthesis7": "Photosynthesis is an endorthermic reaction. The energy for photosynthesis comes from light. Without light energy, photosynthesis cannot occur. Luckily we have some right here!",
+    "photosynthesis8": "Lets get to work! Combine the O2 and H2O molecules we collected in space together and give them to the tree.",
+    "photosynthesis9": "Thank you! Now I can use this glucose for food and release Oxygen into the atmosphere! Watch out for the lava up a head.",
+    "photosynthesis10": "There is lava up ahead!? Lets collect some!",
+
+    "photosynthesisIntruction": "Press P to cause the photosynthesis reaction.",
+
+    "treeBubble1": "Combine the H20 and C02 molecules to begin photosynthesis!",
+    "treeBubble2": "Press E to give the product to the tree",
+
     "EndGame": "COMPLETE",
     "spacePress": "Press Space or Tap Screen to Begin",
     "torchLesson": "Awesome! Now I have a flame to melt the ice with! The temperature change in the wood is what caused the chemical reaction to take place which created a flame!",
@@ -33,19 +56,20 @@
     "scene02-0013": "You did it! Now we have a product that produces a GAS. Lets fix up our ship and get our balloon inflated.",
     "scene02-0014": "You found the reactants necessary to get a gas product! Nice work.",
     "scene02-0015": "Press on and find the ingredients for the potion. I will be waiting for you here! Its not like I can go anywhere anyway!",
+    "scene02-0016": "Be careful out there though! Hazardous materials are flying around all over in outerspace!",
     "scene03-0001": "Distant voice: Help Help! Its freezing in here!",
     "scene03-0002": "Woah! Who is that? We gotta go find them!",
     "scene03-0003": "Scanning... Scanning... Life-form detected.",
     "scene03-0004": "Lets go SANIA",
     "scene03-0005": "beep beep click brrrr",
-    "scene03-0006": "The sunlight peering through the roof of this cave is making this spot very warm.",
-    "scene03-0007": "I am sure it is a nice experience. I however cannot feel anything. Scanning...Scanning... Life form is closer now.",
+    "scene03-0006": "We've obtained the lava.",
+    "scene03-0007": "Scanning...Scanning... Life form is closer now.",
     "scene03-0008": "We will need to find something flammable to unfreeze the block of ice they are trapped behind. Scanning...Scanning...",
     "scene03-0009": "Ah...lets follow this elevator up. My analyzer has obtained a signal from something we could potentially use.",
     "scene03-0010": "A piece of dry wood. I bet we can heat this up enough to cause a chemical reaction.",
     "scene03-0011": "Surely. When wood catches fire, a new substance is formed. This substance cannot be changed back to its original state, therefore it is a chemical reaction.",
-    "scene03-0012": "Lets go back to where its warm and make this chemical reaction take place!",
-    "scene03-0013": "beep boop",
+    "scene03-0012": "Lets combine the lava and the wood. Perhaps this will cause a flame.",
+    "scene03-0013": "This will be interesting since burning wood is an example of an exothermic reaction. An exothermic reaction is one in which energy is released! Photosynthesis is the complete opposite. How neat!",
     "scene03-0014": "OH WOW! PETE! What are you doing in here!?",
     "scene03-0015": "Buzz! Im glad to see you. I was just out for a stroll when the cave temperature suddenly dropped freezing everything. I was trapped. I am so hungry.",
     "scene03-0016": "I want to get out of here, but I do not have enough energy to make it. I can smell some food somewhere in this cave though. Can you help me find it?",
@@ -83,6 +107,12 @@
     "finalScene-0001": "Hi! Welcome back! I am so glad to see you. I see you've brought the potion! YAY!",
     "finalScene-0002": "Thank you for everything. This will heal my damages, and allow me to live out here in peace. Please be careful on your way home! It looks like you have plenty of gas to get back!",
     "finalScene-0003": "That’s right! Now that we know how to use the evidence of chemical reactions to navigate the world, we can take this knowledge back home and share it with our friends and family!",
-    "finalScene-0004": "Lets go Buzz and SANIA! "
+    "finalScene-0004": "Lets go Buzz! Lets go SANIA!",
+
+    "triggerText1": "Hey, Buzz. Lets follow that elevator up. There is nothing else over here.",
+    "caveFR": "My analyzer is picking up on something the other way.",
+    "farLeft": "Lets go!",
+    "gasFarRight": "Now that you have both reactants we can combine them. Lets get back to the ship to find that potion!",
+    "bugsFarRight": "Lets talk to Pete and get this precipitate reaction underway!"
   }
 }

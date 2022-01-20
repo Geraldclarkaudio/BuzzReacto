@@ -21,6 +21,8 @@ namespace PaperKiteStudios.BuzzReacto
 
         [SerializeField]
         private GameObject jellyPrefab;
+        [SerializeField]
+        private GameObject popAnim;
 
         private AudioManager audioManager;
 
@@ -35,14 +37,23 @@ namespace PaperKiteStudios.BuzzReacto
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if(other.tag == "PlayerHitBox")
+            if (other.CompareTag("PlayerHitBox"))
             {
-                Debug.Log("Collide!@ Collidiididide");
-                playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y + 20f);
+                if(playerRB.velocity.y < 0)
+                {
+                    playerRB.velocity = Vector2.up * 15f;
+                }
+                else if(playerRB.velocity.y > 0)
+                {
+                    playerRB.velocity = Vector2.zero;
+                }
+              
                 audioManager.EnemyDestroyed();
                 Instantiate(jellyPrefab, transform.position, Quaternion.identity);
+                Instantiate(popAnim, transform.position, Quaternion.identity);
                 Destroy(col);
-                Destroy(this.gameObject, 1f);
+                Destroy(this.gameObject, 0.5f);
+               
             }
         }
 

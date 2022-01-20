@@ -12,10 +12,15 @@ namespace PaperKiteStudios.BuzzReacto
         [SerializeField]
         private GameObject treePotion;
         [SerializeField]
+        private GameObject photosynthesis;
+
+        [SerializeField]
+        private GameObject torch;
+        [SerializeField]
         private GameObject productText;
 
         [SerializeField]
-        private bool bakingSodaAdded, vinegarAdded, solution1Added, solution2Added = false;
+        private bool bakingSodaAdded, vinegarAdded, solution1Added, solution2Added, h20Added, co2Added, lavaAdded, woodAdded = false;
 
         [SerializeField]
         private GameObject dialog3;
@@ -27,6 +32,7 @@ namespace PaperKiteStudios.BuzzReacto
             audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         }
 
+        //Gas Scene
         public void VinegarAdded()
         {
             vinegarAdded = true;
@@ -38,6 +44,35 @@ namespace PaperKiteStudios.BuzzReacto
             bakingSodaAdded = true;
             audioManager.PlayDropSound();
         }
+
+        //Cave Scene
+
+        public void h2oAdded()
+        {
+            h20Added = true;
+            audioManager.PlayDropSound();
+        }
+
+        public void CarbonDioxideAdded()
+        {
+            co2Added = true;
+            audioManager.PlayDropSound();
+
+        }
+        public void LavaAdded()
+        {
+            lavaAdded = true;
+            audioManager.PlayDropSound();
+        }
+
+        public void WoodAdded()
+        {
+            woodAdded = true;
+            audioManager.PlayDropSound();
+
+        }
+
+        //Final Mixture
 
         public void Solution1Added()
         {
@@ -62,6 +97,22 @@ namespace PaperKiteStudios.BuzzReacto
                 bakingSodaAdded = false;
                 vinegarAdded = false;
             }
+            if(h20Added == true && co2Added == true)
+            {
+                PhotosynthesisCreated();
+                productText.SetActive(false);
+                GameManager.Instance.hasPhotosynthesis = true;
+                h20Added = false;
+                co2Added = false;
+            }
+            if(lavaAdded == true && woodAdded == true)
+            {
+                torch.SetActive(true);
+                lavaAdded = false;
+                woodAdded = false;
+
+                //make torch appear in hand and close out the inventory panel. 
+            }
 
             if (solution1Added == true && solution2Added == true)
             {
@@ -78,6 +129,12 @@ namespace PaperKiteStudios.BuzzReacto
         {
             bubbles.SetActive(true);
             dialog3.SetActive(true);
+            audioManager.PlayCombinedItemsSound();
+        }
+
+        public void PhotosynthesisCreated()
+        {
+            photosynthesis.SetActive(true);
             audioManager.PlayCombinedItemsSound();
         }
 

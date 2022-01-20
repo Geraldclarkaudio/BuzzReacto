@@ -30,12 +30,12 @@ namespace PaperKiteStudios.BuzzReacto
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.tag == "DeAct")
+            if (other.CompareTag("DeAct"))
             {
                 cineCam1.SetActive(false);
             }
 
-            if (other.tag == "Tree")
+            if (other.CompareTag("Tree"))
             {
                 rb.gravityScale = 2;
                 cameraFade.SetActive(true);

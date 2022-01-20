@@ -12,7 +12,7 @@ namespace PaperKiteStudios.BuzzReacto
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.tag == "Player")
+            if (other.CompareTag("Player"))
             {
                LOLSDK.Instance.SubmitProgress(0, currentProgress, 8);
                 Debug.Log("Submitted some dang ol progress");

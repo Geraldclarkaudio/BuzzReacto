@@ -15,6 +15,9 @@ namespace PaperKiteStudios.BuzzReacto
 
         private AudioManager audioManager;
 
+        [SerializeField]
+        private GameObject cutsceneToActivate;
+
 
         private void Start()
         {
@@ -24,7 +27,7 @@ namespace PaperKiteStudios.BuzzReacto
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.tag == "Player")
+            if (other.CompareTag("Player"))
             {
                 audioManager.PlayCollectedSound();
 
@@ -63,6 +66,14 @@ namespace PaperKiteStudios.BuzzReacto
                 {
                     Debug.Log("Obtained Jelly");
                     player.ObtainedJelly(jellys);
+                }
+                if(gameObject.name == "Lava")
+                {
+                    Debug.Log("Obtained Lava");
+                    GameManager.Instance.hasLava = true;
+
+                    cutsceneToActivate.SetActive(true);
+
                 }
             }
 

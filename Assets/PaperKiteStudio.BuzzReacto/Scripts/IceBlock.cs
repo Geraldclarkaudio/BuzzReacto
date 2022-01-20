@@ -14,7 +14,7 @@ namespace PaperKiteStudios.BuzzReacto
         }
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.tag == "Torch")
+            if (other.CompareTag("Torch"))
             {
                 _anim.SetTrigger("Melt");
                 Destroy(this.gameObject, 3f);

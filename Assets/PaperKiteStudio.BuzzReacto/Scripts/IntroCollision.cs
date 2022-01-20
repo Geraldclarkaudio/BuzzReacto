@@ -14,7 +14,7 @@ namespace PaperKiteStudios.BuzzReacto
         }
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.tag == "Balloon")
+            if (other.CompareTag("Balloon"))
             {
                 _anim.SetTrigger("ScreenShake");
                 other.GetComponent<Rigidbody2D>().gravityScale = 2;

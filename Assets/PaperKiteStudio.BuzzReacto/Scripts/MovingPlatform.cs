@@ -23,14 +23,23 @@ namespace PaperKiteStudios.BuzzReacto
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.tag == "Player")
+            if (other.CompareTag("Player"))
+            {
+                other.transform.parent = this.transform;
+            }
+
+            if(other.CompareTag("Sania"))
             {
                 other.transform.parent = this.transform;
             }
         }
         private void OnTriggerExit2D(Collider2D other)
         {
-            if (other.tag == "Player")
+            if (other.CompareTag("Player"))
+            {
+                other.transform.parent = null;
+            }
+            if (other.CompareTag("Sania"))
             {
                 other.transform.parent = null;
             }

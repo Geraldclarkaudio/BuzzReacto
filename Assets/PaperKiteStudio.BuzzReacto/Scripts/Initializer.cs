@@ -19,7 +19,7 @@ namespace PaperKiteStudios.BuzzReacto
     public class Initializer : MonoBehaviour
     {
 
-        bool _init;
+        bool _init = false;
         WaitForSeconds _feedbackTimer = new WaitForSeconds(2);
         Coroutine _feedbackMethod;
 

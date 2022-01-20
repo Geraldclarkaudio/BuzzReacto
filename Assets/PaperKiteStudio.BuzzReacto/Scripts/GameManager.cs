@@ -25,8 +25,6 @@ namespace PaperKiteStudios.BuzzReacto
 
         public Player _player { get; set; }
        
-
-        public bool hasWoodPlank { get; set; }
         public bool hasWaterBottle { get; set; }
 
         public bool hasVinegar { get; set; }
@@ -35,9 +33,14 @@ namespace PaperKiteStudios.BuzzReacto
         public bool hasCarrot { get; set; }
         public bool hasCookedCarrot { get; set; }
 
+        public bool hasPhotosynthesis { get; set; }
+
         public bool haspreMixedPotion { get; set; }
         public bool hasTreePotion { get; set; }
         public bool hasSolution2 { get; set; }
+
+        public bool hasLava { get; set; }
+        public bool hasWoodPlank { get; set; }
 
         private void Awake()
         {

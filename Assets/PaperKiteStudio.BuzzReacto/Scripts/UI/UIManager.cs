@@ -20,7 +20,7 @@ namespace PaperKiteStudios.BuzzReacto
         public TextMeshProUGUI jellyCount;
 
         [SerializeField]
-        private GameObject bakingSodaUI, vinegarUI, waterBottleUI, woodPlankUI;
+        private GameObject bakingSodaUI, vinegarUI, waterBottleUI, woodPlankUI, lavaUI, h2oUI, co2UI;
 
         public void InventoryActive()
         {
@@ -59,6 +59,21 @@ namespace PaperKiteStudios.BuzzReacto
             {
                 bakingSodaUI.SetActive(false);
                 vinegarUI.SetActive(false);
+            }
+            if(GameManager.Instance.hasWoodPlank == true)
+            {
+                woodPlankUI.SetActive(true);
+
+            }
+            if(GameManager.Instance.hasLava == true)
+            {
+                lavaUI.SetActive(true);
+            }
+            if(GameManager.Instance.hasPhotosynthesis == true)
+            {
+
+                h2oUI.SetActive(false);
+                co2UI.SetActive(false);
             }
 
         }

@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/PaperKiteStudio.BuzzReacto/Scenes/Init.unity
     guid: 7eff8ebe719343f468bbb5d443ef3f6a
   - enabled: 1
-    path: Assets/PaperKiteStudio.BuzzReacto/Scenes/PressTostart.unity
-    guid: 5df3268016cfa044eb83f81f86c27562
-  - enabled: 1
     path: Assets/PaperKiteStudio.BuzzReacto/Scenes/MainMenu.unity
     guid: 2056f028c96fc6344ac8673481eda251
   - enabled: 1
@@ -23,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/PaperKiteStudio.BuzzReacto/Scenes/FloatUp_Scene.unity
     guid: 706e58787152fed488a8feca29b743ae
+  - enabled: 1
+    path: Assets/PaperKiteStudio.BuzzReacto/Scenes/Combat.unity
+    guid: da4bbf0b945f44042abb2736a3ff23ae
   - enabled: 1
     path: Assets/PaperKiteStudio.BuzzReacto/Scenes/Intro_IcyCave.unity
     guid: 7df550af066d92744b7de2fbcacd69f1

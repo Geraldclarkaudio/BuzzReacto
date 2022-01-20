@@ -17,7 +17,7 @@ namespace PaperKiteStudios.BuzzReacto
         public bool interactable = false;
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.tag == "Player")
+            if (other.CompareTag("Player"))
             {
                 interactable = true;
                 if(GameManager.Instance.hasFuel == true)
@@ -32,7 +32,7 @@ namespace PaperKiteStudios.BuzzReacto
         }
         private void OnTriggerExit2D(Collider2D other)
         {
-            if (other.tag == "Player")
+            if (other.CompareTag("Player"))
             {
                 interactable = false;
                 dialogBubble.SetActive(false);

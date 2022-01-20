@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-
-
 using LoLSDK;
 
 namespace PaperKiteStudios.BuzzReacto
@@ -24,15 +21,15 @@ namespace PaperKiteStudios.BuzzReacto
         [SerializeField]
         private bool isGrounded = false;
 
-        private bool _paused = false;
+      //  private bool _paused = false;
 
         private UIManager _uiManager;
         private Animator _anim;
-        public Animator _robotAnimRF, _robotAnimLF;
+        //public Animator _robotAnimRF, _robotAnimLF;
         private SpriteRenderer _sprite;
 
         [SerializeField]
-        private GameObject saniaLF, saniaRF;
+        public GameObject saniaLF, saniaRF;
 
 
         [SerializeField]
@@ -45,11 +42,13 @@ namespace PaperKiteStudios.BuzzReacto
         [SerializeField]
         private GameObject dialog;
 
+        private Scene scene;
+
         // Start is called before the first frame update
         void Start()
         {
+            scene = SceneManager.GetActiveScene();
             jellyCount = 0;
-
 
             _uiManager = GameObject.Find("UI_Manager").GetComponent<UIManager>();
             if (_uiManager == null)
@@ -85,10 +84,18 @@ namespace PaperKiteStudios.BuzzReacto
 
             if (canMove == false)
             {
-                _anim.SetFloat("Move", 0);
-                _robotAnimLF.SetFloat("Move", 0);
-                _robotAnimRF.SetFloat("Move", 0);
-                return;
+                if(scene.name != "MainMenu" || scene.name =="Final_Scene")
+                {
+                    _anim.SetFloat("Move", 0);
+                    //_robotAnimLF.SetFloat("Move", 0);
+                    //_robotAnimRF.SetFloat("Move", 0);
+                    return;
+                }
+                else
+                {
+                    return;
+                }
+                
             }
             else if(canMove==true)
             {
@@ -120,8 +127,8 @@ namespace PaperKiteStudios.BuzzReacto
                 rb.velocity = new Vector2(horizontalInput * _speed, rb.velocity.y);
                 _anim.SetFloat("Move", Mathf.Abs(horizontalInput));
 
-                _robotAnimLF.SetFloat("Move", Mathf.Abs(horizontalInput));
-                _robotAnimRF.SetFloat("Move", Mathf.Abs(horizontalInput));
+                //_robotAnimLF.SetFloat("Move", Mathf.Abs(horizontalInput));
+                //_robotAnimRF.SetFloat("Move", Mathf.Abs(horizontalInput));
             }
             //rb.velocity = new Vector2(horizontalInput * _speed, rb.velocity.y);
             //_anim.SetFloat("Move", Mathf.Abs(horizontalInput));
@@ -184,6 +191,7 @@ namespace PaperKiteStudios.BuzzReacto
         public void ObtainedJelly(int amount)
         {
             jellyCount ++;
+
             _uiManager.UpdateJellyAmount(jellyCount);
 
             if(jellyCount == 5)

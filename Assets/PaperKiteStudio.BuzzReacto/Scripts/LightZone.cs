@@ -12,7 +12,7 @@ namespace PaperKiteStudios.BuzzReacto
         // Start is called before the first frame update
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.tag == "Player")
+            if (other.CompareTag("Player"))
             {
                 if (GameManager.Instance.hasWoodPlank == true)
                 {
