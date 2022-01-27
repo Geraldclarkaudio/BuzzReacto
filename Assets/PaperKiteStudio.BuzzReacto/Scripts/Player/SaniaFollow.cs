@@ -27,11 +27,11 @@ namespace PaperKiteStudios.BuzzReacto
         }
 
         // Update is called once per frame
-        void Update()
+   
+        private void FixedUpdate()
         {
             FollowPlayer();
         }
-
         private void FollowPlayer()
         {
             if (targetposition.Count > 0 && targetposition[currentTarget] != null)

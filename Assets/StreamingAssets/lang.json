@@ -13,7 +13,7 @@
     "NeedFuel": "Combine reactants to create fuel (Press I)",
 
     "combatSceneS1": "We are finally back at it SANIA! Lets do a little bit of cleaning up. Destroying pollution is what we do best!",
-    "combatSceneS2": "Lets collect some of the Carbon Dioxide these soda cans generate after they're destroyed as well as the H20 from the water bottles. You never know when you will need water!",
+    "combatSceneS2": "Lets collect some of the Carbon Dioxide these soda cans generate after they're destroyed as well as the H2O from the water bottles. You never know when you will need water!",
     "combatSceneS3": "Alright! Lets go!",
 
     "combatscene4": "We have collected 10 of each! This should be plenty. Lets head down to continue searching for the ingredients for the tree's potion.",
@@ -22,14 +22,14 @@
     "photosynthesis2": "Yes Hello!",
     "photosynthesis3": "Another talking tree!",
     "photosynthesis4": "I am very hungry! I have no carbon dioxide or water in here! Its all ice!",
-    "photosynthesis5": "SANIA...we have the ingredients necessary to cause photosynhesis to take place. Maybe we can help this tree out.",
+    "photosynthesis5": "SANIA...we have the ingredients necessary to cause photosynthesis to take place. Maybe we can help this tree out.",
     "photosynthesis6": "In photosynthesis, plants make the simple sugar, glucose (C6H12O6) from carbon dioxide (CO2), and water (H2O). They also release oxygen (O2) in the process.",
-    "photosynthesis7": "Photosynthesis is an endorthermic reaction. The energy for photosynthesis comes from light. Without light energy, photosynthesis cannot occur. Luckily we have some right here!",
+    "photosynthesis7": "Photosynthesis is an endothermic reaction. The energy for photosynthesis comes from light. Without light energy, photosynthesis cannot occur. Luckily we have some right here!",
     "photosynthesis8": "Lets get to work! Combine the O2 and H2O molecules we collected in space together and give them to the tree.",
     "photosynthesis9": "Thank you! Now I can use this glucose for food and release Oxygen into the atmosphere! Watch out for the lava up a head.",
     "photosynthesis10": "There is lava up ahead!? Lets collect some!",
 
-    "photosynthesisIntruction": "Press P to cause the photosynthesis reaction.",
+    "photosynthesisIntruction": "Press E to cause the photosynthesis reaction.",
 
     "treeBubble1": "Combine the H20 and C02 molecules to begin photosynthesis!",
     "treeBubble2": "Press E to give the product to the tree",
@@ -58,7 +58,7 @@
     "scene02-0015": "Press on and find the ingredients for the potion. I will be waiting for you here! Its not like I can go anywhere anyway!",
     "scene02-0016": "Be careful out there though! Hazardous materials are flying around all over in outerspace!",
     "scene03-0001": "Distant voice: Help Help! Its freezing in here!",
-    "scene03-0002": "Woah! Who is that? We gotta go find them!",
+    "scene03-0002": "Woah! Who is that? We must go find them!",
     "scene03-0003": "Scanning... Scanning... Life-form detected.",
     "scene03-0004": "Lets go SANIA",
     "scene03-0005": "beep beep click brrrr",

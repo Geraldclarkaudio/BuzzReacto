@@ -20,6 +20,7 @@ namespace PaperKiteStudios.BuzzReacto {
             if (other.CompareTag("Player"))
             {
                 canInteract = true;
+                bubble.SetActive(true);
             }
         }
         private void OnTriggerExit2D(Collider2D other)
@@ -27,6 +28,7 @@ namespace PaperKiteStudios.BuzzReacto {
             if (other.CompareTag("Player"))
             {
                 canInteract = false;
+                bubble.SetActive(false);
             }
         }
 

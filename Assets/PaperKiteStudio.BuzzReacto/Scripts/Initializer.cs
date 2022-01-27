@@ -19,14 +19,12 @@ namespace PaperKiteStudios.BuzzReacto
     public class Initializer : MonoBehaviour
     {
 
-        bool _init = false;
+        public bool _init = false;
         WaitForSeconds _feedbackTimer = new WaitForSeconds(2);
         Coroutine _feedbackMethod;
-
+        [SerializeField, Header("State Data")] PlayerData playerData;
         JSONNode _langNode;
         string _langCode = "en";
-
-        [SerializeField, Header("State Data")] PlayerData playerData;
         [SerializeField] Button continueButton, newGameButton;
         [SerializeField] TextMeshProUGUI newGameText, continueText;
 
@@ -37,32 +35,25 @@ namespace PaperKiteStudios.BuzzReacto
 #if UNITY_EDITOR
             ILOLSDK sdk = new LoLSDK.MockWebGL();
 #elif UNITY_WEBGL
-			ILOLSDK sdk = new LoLSDK.WebGL();
+		    ILOLSDK sdk = new LoLSDK.WebGL();
 #elif UNITY_IOS || UNITY_ANDROID
             ILOLSDK sdk = null; // TODO COMING SOON IN V6
 #endif
             LOLSDK.Init(sdk, "com.PaperKiteStudios.BuzzReactoandtheTreeofLife");
-            
-
-
+  
             LOLSDK.Instance.StartGameReceived += new StartGameReceivedHandler(StartGame);
             LOLSDK.Instance.GameStateChanged += new GameStateChangedHandler(gameState => Debug.Log(gameState));
             LOLSDK.Instance.QuestionsReceived += new QuestionListReceivedHandler(questionList => Debug.Log(questionList));
             LOLSDK.Instance.LanguageDefsReceived += new LanguageDefsReceivedHandler(LanguageUpdate);
-            //yikes
+
             LOLSDK.Instance.SaveResultReceived += OnSaveResult;
             LOLSDK.Instance.GameIsReady();
 #if UNITY_EDITOR
             UnityEditor.EditorGUIUtility.PingObject(this);
             LoadMockData();
 #endif
-          
-            
-            // Create the WebGL (or mock) object
-            // This will all change in SDK V6 to be simplified and streamlined.
             Helper.StateButtonInitialize<PlayerData>(newGameButton, continueButton, onload);
 
-    
         }
 
         private void OnDestroy()
@@ -124,7 +115,7 @@ namespace PaperKiteStudios.BuzzReacto
 
         public void onload(PlayerData loadedPlayerData)
         {
-
+            
             // Overrides serialized state data or continues with editor serialized values.
             if (loadedPlayerData != null)
             {

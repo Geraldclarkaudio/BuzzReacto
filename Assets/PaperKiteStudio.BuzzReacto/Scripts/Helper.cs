@@ -29,7 +29,9 @@ namespace LoLSDK
             newGameButton.gameObject.SetActive(false);
             continueButton.gameObject.SetActive(false);
             // Check for valid state data, from server or fallback local ( PlayerPrefs )
+
             LOLSDK.Instance.LoadState<T>(state =>
+
             {
                 if (state != null)
                 {

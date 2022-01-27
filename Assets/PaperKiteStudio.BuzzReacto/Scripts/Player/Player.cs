@@ -17,7 +17,9 @@ namespace PaperKiteStudios.BuzzReacto
         [SerializeField]
         private float _speed = 5.0f;
 
-        private bool resetJumpNeeded = false;
+        private BoxCollider2D boxCollider2d;
+
+        public bool resetJumpNeeded = false;
         [SerializeField]
         private bool isGrounded = false;
 
@@ -49,6 +51,7 @@ namespace PaperKiteStudios.BuzzReacto
         {
             scene = SceneManager.GetActiveScene();
             jellyCount = 0;
+            boxCollider2d = GetComponent<BoxCollider2D>();
 
             _uiManager = GameObject.Find("UI_Manager").GetComponent<UIManager>();
             if (_uiManager == null)
@@ -109,6 +112,7 @@ namespace PaperKiteStudios.BuzzReacto
             float horizontalInput = Input.GetAxisRaw("Horizontal");
 
             isGrounded = Grounded();
+
             //FLIP =================
             FlipSprite(horizontalInput);
             //JUMP ====================
@@ -118,34 +122,28 @@ namespace PaperKiteStudios.BuzzReacto
                 StartCoroutine(WaitForGrounded());
             }
             //MOVE=======================
-            if(Grounded() == false)
-            {
+            if(Grounded() == false)//prevents movement while in the air. 
+            { 
                 return;
             }
             else if(Grounded() == true)
             {
                 rb.velocity = new Vector2(horizontalInput * _speed, rb.velocity.y);
                 _anim.SetFloat("Move", Mathf.Abs(horizontalInput));
-
-                //_robotAnimLF.SetFloat("Move", Mathf.Abs(horizontalInput));
-                //_robotAnimRF.SetFloat("Move", Mathf.Abs(horizontalInput));
             }
-            //rb.velocity = new Vector2(horizontalInput * _speed, rb.velocity.y);
-            //_anim.SetFloat("Move", Mathf.Abs(horizontalInput));
-
-            //_robotAnimLF.SetFloat("Move", Mathf.Abs(horizontalInput));
-            //_robotAnimRF.SetFloat("Move", Mathf.Abs(horizontalInput));
         }
 
         public bool Grounded()
         {
-            RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.down, 4.0f, 1 << 8);
-
-            Debug.DrawRay(transform.position, Vector2.down * 4.0f, Color.green);
+            float extraheighttest = 0.1f;
+            RaycastHit2D hitInfo = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, extraheighttest, 1<<8);
+         
+            Debug.DrawRay(boxCollider2d.bounds.center + new Vector3(boxCollider2d.bounds.extents.x, 0), Vector2.down * (boxCollider2d.bounds.extents.y + extraheighttest), Color.green);
+            Debug.DrawRay(boxCollider2d.bounds.center - new Vector3(boxCollider2d.bounds.extents.x, 0), Vector2.down * (boxCollider2d.bounds.extents.y + extraheighttest), Color.green);
+            Debug.DrawRay(boxCollider2d.bounds.center - new Vector3(boxCollider2d.bounds.extents.x, boxCollider2d.bounds.extents.y), Vector2.right * boxCollider2d.bounds.size.x, Color.green);
 
             if (hitInfo.collider != null)
             {
-
                 if (resetJumpNeeded == false)
                 {
                     return true;
