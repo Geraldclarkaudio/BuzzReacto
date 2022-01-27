@@ -36,7 +36,7 @@ namespace PaperKiteStudios.BuzzReacto {
         void Update()
         {
             if (GameManager.Instance.hasPhotosynthesis == true)
-            { 
+            {
                 if (canInteract == true && Input.GetKeyDown(KeyCode.E))
                 {
                     postPhotosynthBox.SetActive(true);
@@ -46,11 +46,11 @@ namespace PaperKiteStudios.BuzzReacto {
 
             else if (GameManager.Instance.hasPhotosynthesis == false)
             {
-                if(canInteract == true && Input.GetKeyDown(KeyCode.E))
+                if (canInteract == true && Input.GetKeyDown(KeyCode.E))
                 {
-                   
+
                 }
             }
-    }
+        }
     }
 }
