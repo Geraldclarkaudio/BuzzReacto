@@ -449,7 +449,12 @@ namespace PaperKiteStudios.BuzzReacto
             index = 0;
             textComponent.text = init.GetText(lines[index]);
             LOLSDK.Instance.SpeakText(lines[index]);
-            player.canMove = false;
+
+            if(player != null)
+            {
+                player.canMove = false;
+            }
+           
         }
 
         void NextLine()
@@ -468,9 +473,11 @@ namespace PaperKiteStudios.BuzzReacto
                 icons[2].SetActive(false);
                 icons[3].SetActive(false);
 
-               
-                player.canMove = true;
-              
+               if(player!=null)
+                {
+                    player.canMove = true;
+                }
+
             }
         }
     }

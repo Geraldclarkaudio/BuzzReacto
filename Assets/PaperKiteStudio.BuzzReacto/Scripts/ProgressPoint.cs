@@ -14,8 +14,8 @@ namespace PaperKiteStudios.BuzzReacto
         {
             if (other.CompareTag("Player"))
             {
-               LOLSDK.Instance.SubmitProgress(0, currentProgress, 8);
-                Debug.Log("Submitted some dang ol progress");
+               LOLSDK.Instance.SubmitProgress(0, currentProgress, 9);
+               
                 Destroy(this.gameObject);
             }
         }

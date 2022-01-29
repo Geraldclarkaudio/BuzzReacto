@@ -27,7 +27,8 @@ namespace PaperKiteStudios.BuzzReacto
         string _langCode = "en";
         [SerializeField] Button continueButton, newGameButton;
         [SerializeField] TextMeshProUGUI newGameText, continueText;
-
+        public int _dataCounter = 0;
+        int _totalDataCount = 2;
 
 
         void Awake()
@@ -52,8 +53,19 @@ namespace PaperKiteStudios.BuzzReacto
             UnityEditor.EditorGUIUtility.PingObject(this);
             LoadMockData();
 #endif
-            Helper.StateButtonInitialize<PlayerData>(newGameButton, continueButton, onload);
 
+        }
+
+        private void Start()
+        {
+            StartCoroutine(WaitToLoad());
+        }
+
+        IEnumerator WaitToLoad()
+        {
+            yield return new WaitUntil(() => _dataCounter >= _totalDataCount);
+            Helper.StateButtonInitialize<PlayerData>(newGameButton, continueButton, onload);
+            Debug.Log("LoadState Called I think");
         }
 
         private void OnDestroy()
@@ -86,19 +98,23 @@ namespace PaperKiteStudios.BuzzReacto
                 return;
 
             JSONNode startGamePayload = JSON.Parse(startGameJSON);
+            Debug.Log("StartGame()Called");
            
             // Capture the language code from the start payload. Use this to switch fonts
             _langCode = startGamePayload["languageCode"];
+
+            _dataCounter++;
         }
 
         public void LanguageUpdate(string langJSON)
         {
             if (string.IsNullOrEmpty(langJSON))
                 return;
-
+            Debug.Log("LangUpdate()");
             _langNode = JSON.Parse(langJSON);
 
             TextDisplayUpdate();
+            _dataCounter++;
         }
 
         public string GetText(string key)
@@ -115,7 +131,7 @@ namespace PaperKiteStudios.BuzzReacto
 
         public void onload(PlayerData loadedPlayerData)
         {
-            
+           
             // Overrides serialized state data or continues with editor serialized values.
             if (loadedPlayerData != null)
             {
@@ -190,7 +206,7 @@ namespace PaperKiteStudios.BuzzReacto
         {
             //I need to say if Active Scene is "gas" playerdata.level = 1 and so on and so forth.
             Scene scene = SceneManager.GetActiveScene();
-            Debug.Log("Active Scene is " + scene.name);
+            //Debug.Log("Active Scene is " + scene.name);
             
             if(scene.name == "Gas")
             {

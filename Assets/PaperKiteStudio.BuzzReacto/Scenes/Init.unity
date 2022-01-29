@@ -866,7 +866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &915073273
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1281,12 +1281,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35be61274aa11264eb3224b68da3464a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _init: 0
   playerData:
     level: 0
   continueButton: {fileID: 915073275}
   newGameButton: {fileID: 420354223}
   newGameText: {fileID: 1775065060}
   continueText: {fileID: 713987916}
+  _dataCounter: 0
 --- !u!114 &1260125894
 MonoBehaviour:
   m_ObjectHideFlags: 0
