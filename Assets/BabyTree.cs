@@ -20,7 +20,14 @@ namespace PaperKiteStudios.BuzzReacto {
             if (other.CompareTag("Player"))
             {
                 canInteract = true;
-                bubble.SetActive(true);
+                if (o2Particle.activeSelf == true)
+                {
+                    bubble.SetActive(false);
+                }
+                else if (o2Particle.activeSelf == false)
+                {
+                    bubble.SetActive(true);
+                }
             }
         }
         private void OnTriggerExit2D(Collider2D other)
@@ -41,14 +48,7 @@ namespace PaperKiteStudios.BuzzReacto {
                 {
                     postPhotosynthBox.SetActive(true);
                     o2Particle.SetActive(true);
-                }
-            }
-
-            else if (GameManager.Instance.hasPhotosynthesis == false)
-            {
-                if (canInteract == true && Input.GetKeyDown(KeyCode.E))
-                {
-
+                    bubble.SetActive(false);
                 }
             }
         }

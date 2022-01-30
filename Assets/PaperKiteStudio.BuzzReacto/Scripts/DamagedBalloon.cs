@@ -68,7 +68,7 @@ namespace PaperKiteStudios.BuzzReacto
 
         IEnumerator LoadingScene()
         {
-            LOLSDK.Instance.SubmitProgress(0, currentProgress, 0);
+            LOLSDK.Instance.SubmitProgress(0, currentProgress, 8);
             yield return new WaitForSeconds(1.5f);
             //load scene
             SceneManager.LoadScene("FloatUp_Scene");

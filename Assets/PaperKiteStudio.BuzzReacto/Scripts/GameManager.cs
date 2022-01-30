@@ -51,7 +51,7 @@ namespace PaperKiteStudios.BuzzReacto
             {
                 Debug.LogError("Player is Null");
             }
-            DontDestroyOnLoad(this.gameObject);
+           // DontDestroyOnLoad(this.gameObject);
         }
     }
 }

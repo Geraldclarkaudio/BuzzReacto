@@ -61,6 +61,11 @@ namespace PaperKiteStudios.BuzzReacto
             StartCoroutine(WaitToLoad());
         }
 
+        private void Update()
+        {
+            Debug.Log(playerData.level);
+        }
+
         IEnumerator WaitToLoad()
         {
             yield return new WaitUntil(() => _dataCounter >= _totalDataCount);
@@ -131,7 +136,6 @@ namespace PaperKiteStudios.BuzzReacto
 
         public void onload(PlayerData loadedPlayerData)
         {
-           
             // Overrides serialized state data or continues with editor serialized values.
             if (loadedPlayerData != null)
             {
@@ -168,6 +172,11 @@ namespace PaperKiteStudios.BuzzReacto
                 SceneManager.LoadScene("Stir");
                 Save();
             }
+            if(playerData.level == 0)
+            {
+                continueButton.gameObject.SetActive(false);
+            }
+
 
 
             TextDisplayUpdate();
@@ -188,7 +197,7 @@ namespace PaperKiteStudios.BuzzReacto
             }
 
             // Load Dev Language File from StreamingAssets
-            string langFilePath = Path.Combine(Application.streamingAssetsPath, "lang.json");
+            string langFilePath = Path.Combine(Application.streamingAssetsPath, "langu.json");
             if (File.Exists(langFilePath))
             {
                 string langDataAsJson = File.ReadAllText(langFilePath);
