@@ -12027,6 +12027,7 @@ MonoBehaviour:
   postPhotosynthBox: {fileID: 1341083928}
   bubble: {fileID: 1088901355}
   o2Particle: {fileID: 120664276}
+  photoSynthUI: {fileID: 889149549}
 --- !u!61 &678122284
 BoxCollider2D:
   m_ObjectHideFlags: 0

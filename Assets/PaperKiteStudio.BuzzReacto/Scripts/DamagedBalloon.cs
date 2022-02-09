@@ -13,6 +13,7 @@ namespace PaperKiteStudios.BuzzReacto
         [SerializeField]
         private GameObject needFuelBubble;
         public int currentProgress;
+        public GameObject inventoryPanel;
 
         public bool interactable = false;
         private void OnTriggerEnter2D(Collider2D other)
@@ -44,24 +45,33 @@ namespace PaperKiteStudios.BuzzReacto
         {
             if (GameManager.Instance.hasFuel == true && interactable == true)
             {
-                dialogBubble.SetActive(true);
-
-                if (Input.GetKeyDown(KeyCode.E))
+                if(inventoryPanel.activeSelf == false)
                 {
+                    dialogBubble.SetActive(true);
 
-                    StartCoroutine(LoadingScene());
-                    
-
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        StartCoroutine(LoadingScene());
+                    }
                 }
+                else if(inventoryPanel.activeSelf == true)
+                {
+                    dialogBubble.SetActive(false);
+                }
+                
             }
             else if (GameManager.Instance.hasFuel == false && interactable == true)
             {
-
-                if (Input.GetKeyDown(KeyCode.E))
+                if (inventoryPanel.activeSelf == false)
                 {
-                    //dialogue box that says "I need to find baking soda and vinegar. This will power my balloon."
-                    Debug.Log("Need Fuel");
+                    needFuelBubble.SetActive(true);
+
                 }
+                else if(inventoryPanel.activeSelf == true)
+                {
+                    needFuelBubble.SetActive(false);
+                }
+          
 
             }
         }

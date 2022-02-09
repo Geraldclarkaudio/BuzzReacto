@@ -15,6 +15,8 @@ namespace PaperKiteStudios.BuzzReacto {
         [SerializeField]
         private GameObject o2Particle;
 
+        public GameObject photoSynthUI;
+
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Player"))
@@ -49,6 +51,8 @@ namespace PaperKiteStudios.BuzzReacto {
                     postPhotosynthBox.SetActive(true);
                     o2Particle.SetActive(true);
                     bubble.SetActive(false);
+                    //turn off photosynth in UI 
+                    photoSynthUI.SetActive(false);
                 }
             }
         }
