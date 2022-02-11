@@ -18,11 +18,14 @@ namespace PaperKiteStudios.BuzzReacto
         [SerializeField]
         private GameObject cutsceneToActivate;
 
+        private BabyTree tree;
+
 
         private void Start()
         {
             player = GameObject.Find("Player").GetComponent<Player>();
             audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+            tree = GameObject.Find("tree").GetComponent<BabyTree>();
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -71,7 +74,7 @@ namespace PaperKiteStudios.BuzzReacto
                 {
                     Debug.Log("Obtained Lava");
                     GameManager.Instance.hasLava = true;
-
+                    tree.goHereArrow.SetActive(false);
                     cutsceneToActivate.SetActive(true);
 
                 }

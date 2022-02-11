@@ -12,7 +12,8 @@ namespace PaperKiteStudios.BuzzReacto
 {
     public class TextDisplay : MonoBehaviour
     {
-        
+        private float textRate = 2.0f;
+        private float canProceed = -1f;
         private Initializer init;
         private Player player;
         public TextMeshProUGUI textComponent;
@@ -39,11 +40,12 @@ namespace PaperKiteStudios.BuzzReacto
         {
             Scene scene = SceneManager.GetActiveScene();
 
-            if(Input.GetMouseButtonDown(0))
+            if(Input.GetMouseButtonDown(0) && Time.time > canProceed)
             {
                 if(textComponent.text == init.GetText(lines[index]))
                 {
                     NextLine();
+                    canProceed = Time.time + textRate;
                 }
                 else
                 {

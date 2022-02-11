@@ -121,6 +121,11 @@ namespace PaperKiteStudios.BuzzReacto
                 rb.velocity = new Vector2(rb.velocity.x, _jumpHeight);
                 StartCoroutine(WaitForGrounded());
             }
+
+            if (Input.GetKeyUp(KeyCode.Space) && rb.velocity.y > 0)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            }
             //MOVE=======================
             if(Grounded() == false)//prevents movement while in the air. 
             { 

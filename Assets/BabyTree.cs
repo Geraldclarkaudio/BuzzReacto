@@ -17,6 +17,10 @@ namespace PaperKiteStudios.BuzzReacto {
 
         public GameObject photoSynthUI;
 
+        public GameObject inventoryPanel;
+
+        public GameObject goHereArrow;
+
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Player"))
@@ -44,15 +48,38 @@ namespace PaperKiteStudios.BuzzReacto {
         // Update is called once per frame
         void Update()
         {
-            if (GameManager.Instance.hasPhotosynthesis == true)
+            if (GameManager.Instance.hasPhotosynthesis == true && canInteract == true)
             {
-                if (canInteract == true && Input.GetKeyDown(KeyCode.E))
+                if (inventoryPanel.activeSelf == false)
                 {
+                    bubble.SetActive(true);
+                }
+                else if (inventoryPanel.activeSelf == true)
+                {
+                    bubble.SetActive(false);
+                }
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Destroy(GetComponent<BoxCollider2D>());
+                    canInteract = false;
                     postPhotosynthBox.SetActive(true);
                     o2Particle.SetActive(true);
                     bubble.SetActive(false);
                     //turn off photosynth in UI 
                     photoSynthUI.SetActive(false);
+                    goHereArrow.SetActive(true);
+                }
+            }
+
+            else if(GameManager.Instance.hasPhotosynthesis == false && canInteract ==true)
+            {
+                if (inventoryPanel.activeSelf == false)
+                {
+                    bubble.SetActive(true);
+                }
+                else if (inventoryPanel.activeSelf == true)
+                {
+                    bubble.SetActive(false);
                 }
             }
         }
