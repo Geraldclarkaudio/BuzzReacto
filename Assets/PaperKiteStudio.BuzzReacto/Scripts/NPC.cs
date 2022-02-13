@@ -14,6 +14,8 @@ namespace PaperKiteStudios.BuzzReacto
 
         [SerializeField]
         private GameObject dialogBubble;
+
+        public GameObject inventoryPanel;
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Player"))
@@ -53,6 +55,15 @@ namespace PaperKiteStudios.BuzzReacto
                         return;
                     }
                 }
+            }
+
+            if (interactable == true && inventoryPanel.activeSelf == true)
+            {
+                dialogBubble.SetActive(false);
+            }
+            else if (interactable == true && inventoryPanel.activeSelf == false)
+            {
+                dialogBubble.SetActive(true);
             }
         }
     }

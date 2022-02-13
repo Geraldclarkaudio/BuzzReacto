@@ -45,6 +45,7 @@ namespace PaperKiteStudios.BuzzReacto
         private GameObject dialog;
 
         private Scene scene;
+        private MovingPlatform movingPlatform;
 
         // Start is called before the first frame update
         void Start()
@@ -52,6 +53,7 @@ namespace PaperKiteStudios.BuzzReacto
             scene = SceneManager.GetActiveScene();
             jellyCount = 0;
             boxCollider2d = GetComponent<BoxCollider2D>();
+            movingPlatform = GameObject.Find("Moving_Platform").GetComponent<MovingPlatform>();
 
             _uiManager = GameObject.Find("UI_Manager").GetComponent<UIManager>();
             if (_uiManager == null)
@@ -83,15 +85,14 @@ namespace PaperKiteStudios.BuzzReacto
         void Update()
         {
             InventoryScreen();
-           
+
 
             if (canMove == false)
             {
                 if(scene.name != "MainMenu" || scene.name =="Final_Scene")
                 {
                     _anim.SetFloat("Move", 0);
-                    //_robotAnimLF.SetFloat("Move", 0);
-                    //_robotAnimRF.SetFloat("Move", 0);
+       
                     return;
                 }
                 else
@@ -116,7 +117,7 @@ namespace PaperKiteStudios.BuzzReacto
             //FLIP =================
             FlipSprite(horizontalInput);
             //JUMP ====================
-            if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
+            if (Input.GetKeyDown(KeyCode.Space) && rb.velocity.y == 0 || Input.GetKeyDown(KeyCode.Space) && Grounded() == true)
             {
                 rb.velocity = new Vector2(rb.velocity.x, _jumpHeight);
                 StartCoroutine(WaitForGrounded());
@@ -124,11 +125,11 @@ namespace PaperKiteStudios.BuzzReacto
 
             if (Input.GetKeyUp(KeyCode.Space) && rb.velocity.y > 0)
             {
-                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.25f);
             }
             //MOVE=======================
             if(Grounded() == false)//prevents movement while in the air. 
-            { 
+            {
                 return;
             }
             else if(Grounded() == true)
@@ -142,14 +143,14 @@ namespace PaperKiteStudios.BuzzReacto
         {
             float extraheighttest = 0.1f;
             RaycastHit2D hitInfo = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, extraheighttest, 1<<8);
-         
+            boxCollider2d.edgeRadius = 0.01f;
             Debug.DrawRay(boxCollider2d.bounds.center + new Vector3(boxCollider2d.bounds.extents.x, 0), Vector2.down * (boxCollider2d.bounds.extents.y + extraheighttest), Color.green);
             Debug.DrawRay(boxCollider2d.bounds.center - new Vector3(boxCollider2d.bounds.extents.x, 0), Vector2.down * (boxCollider2d.bounds.extents.y + extraheighttest), Color.green);
             Debug.DrawRay(boxCollider2d.bounds.center - new Vector3(boxCollider2d.bounds.extents.x, boxCollider2d.bounds.extents.y), Vector2.right * boxCollider2d.bounds.size.x, Color.green);
-
+           
             if (hitInfo.collider != null)
             {
-                if (resetJumpNeeded == false)
+                if (resetJumpNeeded == false || movingPlatform.onPlatform == true)
                 {
                     return true;
                 }

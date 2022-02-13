@@ -13,24 +13,24 @@ namespace PaperKiteStudios.BuzzReacto
 
         private bool _switching = false;
 
+        private Player player;
+        public bool onPlatform = false;
 
-
-        // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
-
+            player = GameObject.Find("Player").GetComponent<Player>();
         }
-
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Player"))
             {
                 other.transform.parent = this.transform;
+                onPlatform = true;
             }
 
             if(other.CompareTag("Sania"))
             {
-                other.transform.parent = this.transform;
+                other.transform.parent = this.transform;          
             }
         }
         private void OnTriggerExit2D(Collider2D other)
@@ -38,6 +38,7 @@ namespace PaperKiteStudios.BuzzReacto
             if (other.CompareTag("Player"))
             {
                 other.transform.parent = null;
+                onPlatform = false;
             }
             if (other.CompareTag("Sania"))
             {

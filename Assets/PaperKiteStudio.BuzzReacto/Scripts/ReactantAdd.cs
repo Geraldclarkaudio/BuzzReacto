@@ -15,6 +15,9 @@ namespace PaperKiteStudios.BuzzReacto
         private GameObject photosynthesis;
 
         [SerializeField]
+        private GameObject inventoryPanel;
+
+        [SerializeField]
         private GameObject torch;
         [SerializeField]
         private GameObject productText;
@@ -108,6 +111,7 @@ namespace PaperKiteStudios.BuzzReacto
             if(lavaAdded == true && woodAdded == true)
             {
                 torch.SetActive(true);
+                inventoryPanel.SetActive(false);
                 lavaAdded = false;
                 woodAdded = false;
 

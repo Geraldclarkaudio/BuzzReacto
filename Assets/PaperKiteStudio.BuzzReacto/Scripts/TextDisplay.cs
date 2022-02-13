@@ -21,6 +21,8 @@ namespace PaperKiteStudios.BuzzReacto
         public float textSpeed;
         private int index;
 
+        public GameObject mouseClickAnim;
+
         [SerializeField]
         private GameObject[] icons;
         //0 = buzz, 1 = Sana, 2 = Pete, 2 = tree in gas scene
@@ -42,6 +44,7 @@ namespace PaperKiteStudios.BuzzReacto
 
             if(Input.GetMouseButtonDown(0) && Time.time > canProceed)
             {
+                
                 if(textComponent.text == init.GetText(lines[index]))
                 {
                     NextLine();
@@ -51,6 +54,15 @@ namespace PaperKiteStudios.BuzzReacto
                 {
                     textComponent.text = init.GetText(lines[index]);
                 }
+            }
+
+            if(Time.time >= canProceed)
+            {
+                mouseClickAnim.SetActive(true);
+            }
+            else if(Time.time < canProceed)
+            {
+                mouseClickAnim.SetActive(false);
             }
 
             #region GAS SCENE DIALOG
@@ -451,8 +463,8 @@ namespace PaperKiteStudios.BuzzReacto
             index = 0;
             textComponent.text = init.GetText(lines[index]);
             LOLSDK.Instance.SpeakText(lines[index]);
-
-            if(player != null)
+            canProceed = Time.time + textRate;
+            if (player != null)
             {
                 player.canMove = false;
             }
@@ -469,6 +481,7 @@ namespace PaperKiteStudios.BuzzReacto
             }
             else
             {
+                mouseClickAnim.SetActive(false);
                 gameObject.SetActive(false);
                 icons[0].SetActive(false);
                 icons[1].SetActive(false);
@@ -479,7 +492,6 @@ namespace PaperKiteStudios.BuzzReacto
                 {
                     player.canMove = true;
                 }
-
             }
         }
     }
