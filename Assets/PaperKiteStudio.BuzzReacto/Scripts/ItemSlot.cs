@@ -11,72 +11,78 @@ namespace PaperKiteStudios.BuzzReacto
         private GameObject text;
 
         private ReactantAdd reactantAdd;
+        private bool canDrop;
 
         private void Start()
         {
             reactantAdd = GameObject.Find("Reactant_Zone").GetComponent<ReactantAdd>();
+            canDrop = true;
         }
         public void OnDrop(PointerEventData eventData)
         {
-            text.SetActive(false);
-
-            if (eventData.pointerDrag != null)
+            if(canDrop == true)
             {
-                eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
-                Debug.Log("Dropped" + eventData.pointerDrag.name);
-
-                if (eventData.pointerDrag.tag == "Vinegar")
+                text.SetActive(false);
+                canDrop = false;
+                if (eventData.pointerDrag != null)
                 {
-                    reactantAdd.VinegarAdded();
-                    eventData.pointerDrag.GetComponent<DragDrop>().enabled = false;
-                }
+                    eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+                    Debug.Log("Dropped" + eventData.pointerDrag.name);
 
-                if (eventData.pointerDrag.tag == "BakingSoda")
-                {
-                    reactantAdd.BakingSodaAdded();
-                    eventData.pointerDrag.GetComponent<DragDrop>().enabled = false;
+                    if (eventData.pointerDrag.tag == "Vinegar")
+                    {
+                        reactantAdd.VinegarAdded();
+                        eventData.pointerDrag.GetComponent<DragDrop>().enabled = false;
+                    }
 
-                }
+                    if (eventData.pointerDrag.tag == "BakingSoda")
+                    {
+                        reactantAdd.BakingSodaAdded();
+                        eventData.pointerDrag.GetComponent<DragDrop>().enabled = false;
 
-                if (eventData.pointerDrag.tag == "h2oUI")
-                {
-                    reactantAdd.h2oAdded();
-                    eventData.pointerDrag.GetComponent<DragDrop>().enabled = false;
+                    }
 
-                }
-                if (eventData.pointerDrag.tag == "co2UI")
-                {
-                    reactantAdd.CarbonDioxideAdded();
-                    eventData.pointerDrag.GetComponent<DragDrop>().enabled = false;
+                    if (eventData.pointerDrag.tag == "h2oUI")
+                    {
+                        reactantAdd.h2oAdded();
+                        eventData.pointerDrag.GetComponent<DragDrop>().enabled = false;
 
-                }
+                    }
+                    if (eventData.pointerDrag.tag == "co2UI")
+                    {
+                        reactantAdd.CarbonDioxideAdded();
+                        eventData.pointerDrag.GetComponent<DragDrop>().enabled = false;
 
-                if (eventData.pointerDrag.tag == "LavaUI")
-                {
-                    reactantAdd.LavaAdded();
-                    eventData.pointerDrag.GetComponent<DragDrop>().enabled = false;
+                    }
 
-                }
-                if (eventData.pointerDrag.tag == "WoodUI")
-                {
-                    reactantAdd.WoodAdded();
-                    eventData.pointerDrag.GetComponent<DragDrop>().enabled = false;
+                    if (eventData.pointerDrag.tag == "LavaUI")
+                    {
+                        reactantAdd.LavaAdded();
+                        eventData.pointerDrag.GetComponent<DragDrop>().enabled = false;
 
-                }
+                    }
+                    if (eventData.pointerDrag.tag == "WoodUI")
+                    {
+                        reactantAdd.WoodAdded();
+                        eventData.pointerDrag.GetComponent<DragDrop>().enabled = false;
 
-                if (eventData.pointerDrag.tag == "Solution1")
-                {
-                    reactantAdd.Solution1Added();
-                    eventData.pointerDrag.GetComponent<DragDrop>().enabled = false;
+                    }
 
-                }
-                if (eventData.pointerDrag.tag == "Solution2")
-                {
-                    reactantAdd.Solution2Added();
-                    eventData.pointerDrag.GetComponent<DragDrop>().enabled = false;
+                    if (eventData.pointerDrag.tag == "Solution1")
+                    {
+                        reactantAdd.Solution1Added();
+                        eventData.pointerDrag.GetComponent<DragDrop>().enabled = false;
 
+                    }
+                    if (eventData.pointerDrag.tag == "Solution2")
+                    {
+                        reactantAdd.Solution2Added();
+                        eventData.pointerDrag.GetComponent<DragDrop>().enabled = false;
+
+                    }
                 }
             }
+           
         }
     }
 }

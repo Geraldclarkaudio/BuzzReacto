@@ -12,7 +12,7 @@ namespace PaperKiteStudios.BuzzReacto
 {
     public class TextDisplay : MonoBehaviour
     {
-        private float textRate = 2.0f;
+        private float textRate = 4.0f;
         private float canProceed = -1f;
         private Initializer init;
         private Player player;

@@ -14,6 +14,9 @@ namespace PaperKiteStudios.BuzzReacto
 
         [SerializeField]
         private GameObject dialogBubble;
+
+        [SerializeField]
+        private GameObject inventoryPanel;
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Player"))
@@ -48,9 +51,19 @@ namespace PaperKiteStudios.BuzzReacto
                 {
                     if (Input.GetKeyDown(KeyCode.E))
                     {
+                        dialogBubble.SetActive(false);
                         return;
                     }
                 }
+            }
+
+            if (interactable == true && inventoryPanel.activeSelf == true && GameManager.Instance.haspreMixedPotion == true)
+            {
+                dialogBubble.SetActive(false);
+            }
+            else if (interactable == true && inventoryPanel.activeSelf == false && GameManager.Instance.haspreMixedPotion == true)
+            {
+                dialogBubble.SetActive(true);
             }
         }
     }

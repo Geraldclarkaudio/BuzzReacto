@@ -17,6 +17,8 @@ namespace PaperKiteStudios.BuzzReacto
         {
             rectTransform = GetComponent<RectTransform>();
             canvasGroup = GetComponent<CanvasGroup>();
+
+            
         }
 
         public void OnPointerDown(PointerEventData eventData)
@@ -34,11 +36,14 @@ namespace PaperKiteStudios.BuzzReacto
         {
             canvasGroup.alpha = 1f;
             canvasGroup.blocksRaycasts = true;
+            Cursor.lockState = CursorLockMode.None;
         }
 
         public void OnDrag(PointerEventData eventData)
         {
             rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+
+            Cursor.lockState = CursorLockMode.Confined;
         }
 
     }
