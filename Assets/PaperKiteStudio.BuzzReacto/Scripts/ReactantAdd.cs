@@ -28,11 +28,20 @@ namespace PaperKiteStudios.BuzzReacto
         [SerializeField]
         private GameObject dialog3;
 
+        private ItemSlot[] itemslot;
+
    
 
         private void Start()
         {
             audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+            
+            GameObject[] zones = GameObject.FindGameObjectsWithTag("DropZone");
+            itemslot = new ItemSlot[zones.Length];
+            for (int i = 0; i<zones.Length; i++)
+            {
+                itemslot[i] = zones[i].GetComponent<ItemSlot>();
+            }
         }
 
         //Gas Scene
@@ -91,7 +100,6 @@ namespace PaperKiteStudios.BuzzReacto
 
         private void Update()
         {
-
             if (bakingSodaAdded == true && vinegarAdded == true)
             {
                 BakingSodaAddVinegar();
@@ -99,6 +107,8 @@ namespace PaperKiteStudios.BuzzReacto
                 GameManager.Instance.hasFuel = true;
                 bakingSodaAdded = false;
                 vinegarAdded = false;
+                itemslot[0].canDrop = true;
+                itemslot[1].canDrop = true;
             }
             if(h20Added == true && co2Added == true)
             {
@@ -107,6 +117,9 @@ namespace PaperKiteStudios.BuzzReacto
                 GameManager.Instance.hasPhotosynthesis = true;
                 h20Added = false;
                 co2Added = false;
+
+                itemslot[0].canDrop = true;
+                itemslot[1].canDrop = true;
             }
             if(lavaAdded == true && woodAdded == true)
             {
@@ -114,6 +127,8 @@ namespace PaperKiteStudios.BuzzReacto
                 inventoryPanel.SetActive(false);
                 lavaAdded = false;
                 woodAdded = false;
+                itemslot[0].canDrop = true;
+                itemslot[1].canDrop = true;
 
                 //make torch appear in hand and close out the inventory panel. 
             }
@@ -125,6 +140,8 @@ namespace PaperKiteStudios.BuzzReacto
                 GameManager.Instance.haspreMixedPotion = true;
                 solution1Added = false;
                 solution2Added = false;
+                itemslot[0].canDrop = true;
+                itemslot[1].canDrop = true;
             }
         }
 

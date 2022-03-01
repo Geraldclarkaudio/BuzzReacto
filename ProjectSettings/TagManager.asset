@@ -25,6 +25,7 @@ TagManager:
   - WoodUI
   - LavaUI
   - Sania
+  - DropZone
   layers:
   - Default
   - TransparentFX

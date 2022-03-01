@@ -11,7 +11,7 @@ namespace PaperKiteStudios.BuzzReacto
         private GameObject text;
 
         private ReactantAdd reactantAdd;
-        private bool canDrop;
+        public bool canDrop;
 
         private void Start()
         {
@@ -24,6 +24,8 @@ namespace PaperKiteStudios.BuzzReacto
             {
                 text.SetActive(false);
                 canDrop = false;
+                Cursor.lockState = CursorLockMode.None;
+                
                 if (eventData.pointerDrag != null)
                 {
                     eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
