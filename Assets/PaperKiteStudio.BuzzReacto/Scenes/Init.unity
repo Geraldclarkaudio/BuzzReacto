@@ -1260,7 +1260,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1260125895}
-  - component: {fileID: 1260125894}
   - component: {fileID: 1260125893}
   m_Layer: 0
   m_Name: App
@@ -1289,18 +1288,6 @@ MonoBehaviour:
   newGameText: {fileID: 1775065060}
   continueText: {fileID: 713987916}
   _dataCounter: 0
---- !u!114 &1260125894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260125892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa00d53a9165446128f5a63f11ec4ea5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1260125895
 Transform:
   m_ObjectHideFlags: 0

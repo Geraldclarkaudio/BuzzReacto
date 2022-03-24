@@ -18,7 +18,19 @@ namespace PaperKiteStudios.BuzzReacto
 
     public class Initializer : MonoBehaviour
     {
+        private static Initializer _instance;
+        public static Initializer Instance
+        {
+            get
+            {
+                if(_instance == null)
+                {
+                    Debug.LogError("Initializer is Null");
+                }
 
+                return _instance;
+            }
+        }
         public bool _init = false;
         WaitForSeconds _feedbackTimer = new WaitForSeconds(2);
         Coroutine _feedbackMethod;
@@ -33,6 +45,40 @@ namespace PaperKiteStudios.BuzzReacto
 
         void Awake()
         {
+            if(_instance!= null && _instance != this)
+            {
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                _instance = this;
+                DontDestroyOnLoad(this.gameObject);
+            }
+
+           
+        }
+
+        private void Start()
+        {
+            StartCoroutine(WaitToRemoveOldApp());
+            StartCoroutine(WaitToLoad());
+        }
+
+        private void Update()
+        {
+            Debug.Log(playerData.level);
+        }
+
+        IEnumerator WaitToLoad()
+        {
+            yield return new WaitUntil(() => _dataCounter >= _totalDataCount);
+            Helper.StateButtonInitialize<PlayerData>(newGameButton, continueButton, onload);
+           
+        }
+
+        IEnumerator WaitToRemoveOldApp()
+        {
+            yield return new WaitForSeconds(0.1f);
 #if UNITY_EDITOR
             ILOLSDK sdk = new LoLSDK.MockWebGL();
 #elif UNITY_WEBGL
@@ -41,7 +87,7 @@ namespace PaperKiteStudios.BuzzReacto
             ILOLSDK sdk = null; // TODO COMING SOON IN V6
 #endif
             LOLSDK.Init(sdk, "com.PaperKiteStudios.BuzzReactoandtheTreeofLife");
-  
+
             LOLSDK.Instance.StartGameReceived += new StartGameReceivedHandler(StartGame);
             LOLSDK.Instance.GameStateChanged += new GameStateChangedHandler(gameState => Debug.Log(gameState));
             LOLSDK.Instance.QuestionsReceived += new QuestionListReceivedHandler(questionList => Debug.Log(questionList));
@@ -55,24 +101,6 @@ namespace PaperKiteStudios.BuzzReacto
 #endif
 
         }
-
-        private void Start()
-        {
-            StartCoroutine(WaitToLoad());
-        }
-
-        private void Update()
-        {
-            Debug.Log(playerData.level);
-        }
-
-        IEnumerator WaitToLoad()
-        {
-            yield return new WaitUntil(() => _dataCounter >= _totalDataCount);
-            Helper.StateButtonInitialize<PlayerData>(newGameButton, continueButton, onload);
-            Debug.Log("LoadState Called I think");
-        }
-
         private void OnDestroy()
         {
 #if UNITY_EDITOR
@@ -118,7 +146,11 @@ namespace PaperKiteStudios.BuzzReacto
             Debug.Log("LangUpdate()");
             _langNode = JSON.Parse(langJSON);
 
-            TextDisplayUpdate();
+            if(SceneManager.GetActiveScene().name == "Init")
+            {
+                TextDisplayUpdate();
+
+            }
             _dataCounter++;
         }
 
@@ -179,7 +211,10 @@ namespace PaperKiteStudios.BuzzReacto
 
 
 
-            TextDisplayUpdate();
+            if (SceneManager.GetActiveScene().name == "Init")
+            {
+                TextDisplayUpdate();
+            }
 
             _init = true;
         }

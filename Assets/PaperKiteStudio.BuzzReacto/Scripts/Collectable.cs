@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 namespace PaperKiteStudios.BuzzReacto
 {
     public class Collectable : MonoBehaviour
@@ -25,7 +25,12 @@ namespace PaperKiteStudios.BuzzReacto
         {
             player = GameObject.Find("Player").GetComponent<Player>();
             audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
-            tree = GameObject.Find("tree").GetComponent<BabyTree>();
+
+            if(SceneManager.GetActiveScene().name == "Cave")
+            {
+                tree = GameObject.Find("tree").GetComponent<BabyTree>();
+
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D other)

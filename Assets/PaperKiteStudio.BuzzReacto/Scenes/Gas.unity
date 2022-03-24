@@ -1798,6 +1798,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &426485378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 426485380}
+  - component: {fileID: 426485379}
+  m_Layer: 0
+  m_Name: App
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &426485379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426485378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35be61274aa11264eb3224b68da3464a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _init: 0
+  playerData:
+    level: 0
+  continueButton: {fileID: 0}
+  newGameButton: {fileID: 0}
+  newGameText: {fileID: 0}
+  continueText: {fileID: 0}
+  _dataCounter: 0
+--- !u!4 &426485380
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426485378}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 543.4113, y: 339, z: -1.2352707}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &442757916
 GameObject:
   m_ObjectHideFlags: 0
@@ -2866,70 +2917,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &686584206
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 686584209}
-  - component: {fileID: 686584208}
-  - component: {fileID: 686584207}
-  m_Layer: 0
-  m_Name: App
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &686584207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 686584206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35be61274aa11264eb3224b68da3464a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _init: 0
-  playerData:
-    level: 0
-  continueButton: {fileID: 0}
-  newGameButton: {fileID: 0}
-  newGameText: {fileID: 0}
-  continueText: {fileID: 0}
-  _dataCounter: 0
---- !u!114 &686584208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 686584206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa00d53a9165446128f5a63f11ec4ea5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &686584209
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 686584206}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 543.4113, y: 339, z: -1.2352707}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 23
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &696839385
 GameObject:
   m_ObjectHideFlags: 0
@@ -12173,6 +12160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9be9d5880728c14eaec17d3d418894f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textRate: 0
   textComponent: {fileID: 1502495578}
   lines:
   - scene02-0011
@@ -12637,7 +12625,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goHereArrow: {fileID: 761621293}
-  addreactantbubble: {fileID: 0}
 --- !u!1 &1877624593
 GameObject:
   m_ObjectHideFlags: 0
@@ -13760,6 +13747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9be9d5880728c14eaec17d3d418894f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textRate: 0
   textComponent: {fileID: 1658308090}
   lines:
   - scene02-0001
@@ -13966,6 +13954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9be9d5880728c14eaec17d3d418894f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textRate: 0
   textComponent: {fileID: 1353081996}
   lines:
   - scene02-0013
