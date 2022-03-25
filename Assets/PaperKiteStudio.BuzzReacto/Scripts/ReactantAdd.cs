@@ -41,6 +41,7 @@ namespace PaperKiteStudios.BuzzReacto
             for (int i = 0; i<zones.Length; i++)
             {
                 itemslot[i] = zones[i].GetComponent<ItemSlot>();
+                Debug.Log(zones);
             }
         }
 
@@ -107,8 +108,7 @@ namespace PaperKiteStudios.BuzzReacto
                 GameManager.Instance.hasFuel = true;
                 bakingSodaAdded = false;
                 vinegarAdded = false;
-                itemslot[0].canDrop = true;
-                itemslot[1].canDrop = true;
+              
             }
             if(h20Added == true && co2Added == true)
             {

@@ -70,7 +70,7 @@ namespace PaperKiteStudios.BuzzReacto
         {
             yield return new WaitUntil(() => _dataCounter >= _totalDataCount);
             Helper.StateButtonInitialize<PlayerData>(newGameButton, continueButton, onload);
-            Debug.Log("LoadState Called I think");
+            //Debug.Log("LoadState Called I think");
         }
 
         private void OnDestroy()
@@ -118,7 +118,10 @@ namespace PaperKiteStudios.BuzzReacto
             Debug.Log("LangUpdate()");
             _langNode = JSON.Parse(langJSON);
 
-            TextDisplayUpdate();
+            if(SceneManager.GetActiveScene().name == "Init")
+            {
+                TextDisplayUpdate();
+            }
             _dataCounter++;
         }
 
@@ -177,9 +180,10 @@ namespace PaperKiteStudios.BuzzReacto
                 continueButton.gameObject.SetActive(false);
             }
 
-
-
-            TextDisplayUpdate();
+            if (SceneManager.GetActiveScene().name == "Init")
+            {
+                TextDisplayUpdate();
+            } 
 
             _init = true;
         }

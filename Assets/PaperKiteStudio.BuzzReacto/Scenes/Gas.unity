@@ -12173,6 +12173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9be9d5880728c14eaec17d3d418894f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textRate: 4
   textComponent: {fileID: 1502495578}
   lines:
   - scene02-0011
@@ -12637,7 +12638,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goHereArrow: {fileID: 761621293}
-  addreactantbubble: {fileID: 0}
 --- !u!1 &1877624593
 GameObject:
   m_ObjectHideFlags: 0
@@ -13761,6 +13761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9be9d5880728c14eaec17d3d418894f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textRate: 1
   textComponent: {fileID: 1658308090}
   lines:
   - scene02-0001
@@ -13967,6 +13968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9be9d5880728c14eaec17d3d418894f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textRate: 4
   textComponent: {fileID: 1353081996}
   lines:
   - scene02-0013
