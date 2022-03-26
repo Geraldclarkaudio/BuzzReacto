@@ -53,13 +53,23 @@ namespace PaperKiteStudios.BuzzReacto
             scene = SceneManager.GetActiveScene();
             jellyCount = 0;
             boxCollider2d = GetComponent<BoxCollider2D>();
-            movingPlatform = GameObject.Find("Moving_Platform").GetComponent<MovingPlatform>();
 
-            _uiManager = GameObject.Find("UI_Manager").GetComponent<UIManager>();
-            if (_uiManager == null)
+            if(SceneManager.GetActiveScene().name != "Rabbit_Rescued" || SceneManager.GetActiveScene().name != "Stir")
             {
-                Debug.LogError("UIMAnager is Null!");
+                movingPlatform = GameObject.Find("Moving_Platform").GetComponent<MovingPlatform>();
+                if (movingPlatform == null)
+                {
+                    Debug.LogError("Moving Platform Is Null");
+                }
+
+
+                _uiManager = GameObject.Find("UI_Manager").GetComponent<UIManager>();
+                if (_uiManager == null)
+                {
+                    Debug.LogError("UIMAnager is Null!");
+                }
             }
+       
 
             _anim = GetComponent<Animator>();
             if (_anim == null)
@@ -84,6 +94,10 @@ namespace PaperKiteStudios.BuzzReacto
         // Update is called once per frame
         void Update()
         {
+            if(scene.name == "Stir")
+            {
+                return;
+            }
             InventoryScreen();
 
 

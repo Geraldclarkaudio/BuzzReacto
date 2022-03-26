@@ -15936,6 +15936,7 @@ MonoBehaviour:
   interactable: 0
   dialogueBox: {fileID: 0}
   dialogBubble: {fileID: 0}
+  inventoryPanel: {fileID: 0}
 --- !u!61 &940438237
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16206,8 +16207,8 @@ GameObject:
   - component: {fileID: 1061418724}
   - component: {fileID: 1061418723}
   - component: {fileID: 1061418722}
-  - component: {fileID: 1061418721}
   - component: {fileID: 1061418720}
+  - component: {fileID: 1061418721}
   m_Layer: 5
   m_Name: DialogueBox (1)
   m_TagString: Untagged
@@ -16237,13 +16238,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1061418719}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9be9d5880728c14eaec17d3d418894f, type: 3}
+  m_Script: {fileID: 11500000, guid: 65e51d73a42e1b44e84e79192d806ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textRate: 4
   textComponent: {fileID: 942080802}
   lines:
   - scene06-0002
-  textSpeed: 0.03
+  textSpeed: 0
   mouseClickAnim: {fileID: 1370899766}
   icons:
   - {fileID: 145728709}
@@ -16679,8 +16681,8 @@ GameObject:
   - component: {fileID: 1231591664}
   - component: {fileID: 1231591668}
   - component: {fileID: 1231591667}
-  - component: {fileID: 1231591666}
   - component: {fileID: 1231591665}
+  - component: {fileID: 1231591666}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -16730,13 +16732,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1231591663}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9be9d5880728c14eaec17d3d418894f, type: 3}
+  m_Script: {fileID: 11500000, guid: 65e51d73a42e1b44e84e79192d806ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textRate: 4
   textComponent: {fileID: 464896685}
   lines:
   - scene06-0001
-  textSpeed: 0.03
+  textSpeed: 0
   mouseClickAnim: {fileID: 1370899766}
   icons:
   - {fileID: 145728709}

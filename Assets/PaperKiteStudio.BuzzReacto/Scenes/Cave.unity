@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 1492722}
   - component: {fileID: 1492725}
   - component: {fileID: 1492724}
-  - component: {fileID: 1492723}
+  - component: {fileID: 1492726}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -163,28 +163,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -210}
   m_SizeDelta: {x: -200, y: -440}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1492723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1492721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e74a7bf3bf2385049ac7a9710bcc3da7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text1: {fileID: 849658821}
-  text2: {fileID: 993034616}
-  text3: {fileID: 1742027243}
-  text4: {fileID: 1668197251}
-  text5: {fileID: 0}
-  text1Text: scene03-0001
-  text2Text: scene03-0002
-  text3Text: scene03-0003
-  text4Text: scene03-0004
-  text5Text: scene03-0005
 --- !u!114 &1492724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,6 +200,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492721}
   m_CullTransparentMesh: 0
+--- !u!114 &1492726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 371ba9bf53829ec478b43414041351f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent:
+  - {fileID: 849658821}
+  - {fileID: 993034616}
+  - {fileID: 1742027243}
+  - {fileID: 1668197251}
+  textKey:
+  - scene03-0001
+  - scene03-0002
+  - scene03-0003
+  - scene03-0004
 --- !u!1 &3930375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1538,6 +1538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9be9d5880728c14eaec17d3d418894f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textRate: 4
   textComponent: {fileID: 533103234}
   lines:
   - torchLesson
@@ -6701,11 +6702,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 172307660}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1132eeca9c8034a4593b5c5690a7a1b7, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ea9d80b677bfdd4fa2ec86a9ad9a078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objectToEnable: {fileID: 108339164}
-  objectToDisable: {fileID: 0}
 --- !u!82 &172307662
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7260,6 +7260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9be9d5880728c14eaec17d3d418894f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textRate: 4
   textComponent: {fileID: 1614080138}
   lines:
   - scene03-0019
@@ -9702,6 +9703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9be9d5880728c14eaec17d3d418894f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textRate: 4
   textComponent: {fileID: 857819236}
   lines:
   - scene03-0014
@@ -14443,6 +14445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9be9d5880728c14eaec17d3d418894f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textRate: 4
   textComponent: {fileID: 413887763}
   lines:
   - photosynthesis1
@@ -23028,6 +23031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9be9d5880728c14eaec17d3d418894f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textRate: 4
   textComponent: {fileID: 446018918}
   lines:
   - photosynthesis9
@@ -26430,6 +26434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9be9d5880728c14eaec17d3d418894f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textRate: 4
   textComponent: {fileID: 3930377}
   lines:
   - scene03-0010
@@ -30835,7 +30840,7 @@ GameObject:
   - component: {fileID: 2066584419}
   - component: {fileID: 2066584421}
   - component: {fileID: 2066584420}
-  - component: {fileID: 2066584422}
+  - component: {fileID: 2066584423}
   m_Layer: 5
   m_Name: DialogBox
   m_TagString: Untagged
@@ -30903,7 +30908,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2066584418}
   m_CullTransparentMesh: 0
---- !u!114 &2066584422
+--- !u!114 &2066584423
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -30912,19 +30917,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 2066584418}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e74a7bf3bf2385049ac7a9710bcc3da7, type: 3}
+  m_Script: {fileID: 11500000, guid: 371ba9bf53829ec478b43414041351f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text1: {fileID: 246605647}
-  text2: {fileID: 1464819098}
-  text3: {fileID: 1013331334}
-  text4: {fileID: 1975077519}
-  text5: {fileID: 0}
-  text1Text: scene03-0006
-  text2Text: scene03-0007
-  text3Text: scene03-0008
-  text4Text: scene03-0009
-  text5Text: 
+  textComponent:
+  - {fileID: 246605647}
+  - {fileID: 1464819098}
+  - {fileID: 1013331334}
+  - {fileID: 1975077519}
+  textKey:
+  - scene03-0006
+  - scene03-0007
+  - scene03-0008
+  - scene03-0009
 --- !u!1 &2070495987
 GameObject:
   m_ObjectHideFlags: 0

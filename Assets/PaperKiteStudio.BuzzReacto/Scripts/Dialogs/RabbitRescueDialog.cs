@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 
 namespace PaperKiteStudios.BuzzReacto
 {
-    public class TextDisplay : MonoBehaviour
+    public class RabbitRescueDialog : MonoBehaviour
     {
         public float textRate = 4.0f;
         private float canProceed = -1f;
@@ -31,7 +31,7 @@ namespace PaperKiteStudios.BuzzReacto
         private GameObject woodDialogBox, torchDialogBox, peteDialogBox, carrotDialogBox, photosynthDialogBox, postPhotoDialogBox;
 
         private void Start()
-        {  
+        {
             init = GameObject.Find("App").GetComponent<Initializer>();
             player = GameObject.Find("Player").GetComponent<Player>();
             textComponent.text = init.GetText(lines[index]);
@@ -42,10 +42,10 @@ namespace PaperKiteStudios.BuzzReacto
         {
             Scene scene = SceneManager.GetActiveScene();
 
-            if(Input.GetMouseButtonDown(0) && Time.time > canProceed)
+            if (Input.GetMouseButtonDown(0) && Time.time > canProceed)
             {
-                
-                if(textComponent.text == init.GetText(lines[index]))
+
+                if (textComponent.text == init.GetText(lines[index]))
                 {
                     NextLine();
                     canProceed = Time.time + textRate;
@@ -56,11 +56,11 @@ namespace PaperKiteStudios.BuzzReacto
                 }
             }
 
-            if(Time.time >= canProceed)
+            if (Time.time >= canProceed)
             {
                 mouseClickAnim.SetActive(true);
             }
-            else if(Time.time < canProceed)
+            else if (Time.time < canProceed)
             {
                 mouseClickAnim.SetActive(false);
             }
@@ -70,7 +70,7 @@ namespace PaperKiteStudios.BuzzReacto
             #region
             if (scene.name == "Gas")
             {
-                if(woodDialogBox.activeSelf ==true)
+                if (woodDialogBox.activeSelf == true)
                 {
                     if (textComponent.text == init.GetText(lines[0]))
                     {
@@ -138,15 +138,15 @@ namespace PaperKiteStudios.BuzzReacto
                         icons[2].SetActive(true);
                     }
                 }
-              
+
             }
             #endregion
 
             //collected Baking Soda
             #region
-            if(scene.name == "Gas")
+            if (scene.name == "Gas")
             {
-                if(torchDialogBox.activeSelf == true)
+                if (torchDialogBox.activeSelf == true)
                 {
                     if (textComponent.text == init.GetText(lines[0]))
                     {
@@ -183,7 +183,7 @@ namespace PaperKiteStudios.BuzzReacto
             #region
             if (scene.name == "Cave")
             {
-                if(woodDialogBox.activeSelf == true)
+                if (woodDialogBox.activeSelf == true)
                 {
                     if (textComponent.text == init.GetText(lines[0]))
                     {
@@ -258,7 +258,7 @@ namespace PaperKiteStudios.BuzzReacto
                     if (textComponent.text == init.GetText(lines[6]))
                     {
                         //sania
-                       
+
                         icons[1].SetActive(true);
                     }
                     if (textComponent.text == init.GetText(lines[7]))
@@ -268,7 +268,7 @@ namespace PaperKiteStudios.BuzzReacto
                     }
                 }
 
-                if(postPhotoDialogBox.activeSelf == true)
+                if (postPhotoDialogBox.activeSelf == true)
                 {
                     if (textComponent.text == init.GetText(lines[0]))
                     {
@@ -361,12 +361,12 @@ namespace PaperKiteStudios.BuzzReacto
 
             if (scene.name == "Rabbit_Rescued")
             {
-                if(woodDialogBox.activeSelf == true)
+                if (woodDialogBox.activeSelf == true)
                 {
                     icons[0].SetActive(true);
                 }
 
-                if(torchDialogBox.activeSelf == true)
+                if (torchDialogBox.activeSelf == true)
                 {
                     icons[0].SetActive(true);
                 }
@@ -374,16 +374,16 @@ namespace PaperKiteStudios.BuzzReacto
             #endregion
 
             #region BUG SCENE DIALOG
-            if(scene.name == "Bugs_Scene")
+            if (scene.name == "Bugs_Scene")
             {
                 if (woodDialogBox.activeSelf == true)
                 {
                     icons[0].SetActive(true);
                 }
 
-                if(torchDialogBox.activeSelf == true)
+                if (torchDialogBox.activeSelf == true)
                 {
-                    if(textComponent.text == init.GetText(lines[0]))
+                    if (textComponent.text == init.GetText(lines[0]))
                     {
                         icons[0].SetActive(true);
                     }
@@ -408,7 +408,7 @@ namespace PaperKiteStudios.BuzzReacto
                     icons[0].SetActive(true);
                 }
 
-                if(carrotDialogBox.activeSelf == true)
+                if (carrotDialogBox.activeSelf == true)
                 {
                     icons[0].SetActive(true);
                 }
@@ -417,35 +417,35 @@ namespace PaperKiteStudios.BuzzReacto
             #endregion
 
             #region STIR SCENE DIALOG
-            if (scene.name =="Stir")
+            if (scene.name == "Stir")
             {
-                if(woodDialogBox.activeSelf == true)
+                if (woodDialogBox.activeSelf == true)
                 {
                     icons[0].SetActive(true);
                 }
-                if(torchDialogBox.activeSelf == true)
+                if (torchDialogBox.activeSelf == true)
                 {
                     icons[0].SetActive(true);
 
                 }
             }
             #endregion
-            
+
             #region FINAL SCENE DIALOG
-            if(scene.name == "Final_Scene")
+            if (scene.name == "Final_Scene")
             {
-                if(woodDialogBox.activeSelf == true || torchDialogBox.activeSelf == true)
+                if (woodDialogBox.activeSelf == true || torchDialogBox.activeSelf == true)
                 {
                     icons[0].SetActive(true);
                 }
 
-                if(peteDialogBox.activeSelf == true)
+                if (peteDialogBox.activeSelf == true)
                 {
-                    if(textComponent.text == init.GetText(lines[0]))
+                    if (textComponent.text == init.GetText(lines[0]))
                     {
                         icons[0].SetActive(true);
                     }
-                    if(textComponent.text == init.GetText(lines[1]))
+                    if (textComponent.text == init.GetText(lines[1]))
                     {
                         icons[0].SetActive(false);
                         icons[1].SetActive(true);
@@ -468,12 +468,12 @@ namespace PaperKiteStudios.BuzzReacto
             {
                 player.canMove = false;
             }
-           
+
         }
 
         void NextLine()
         {
-            if(index < lines.Length - 1)
+            if (index < lines.Length - 1)
             {
                 index++;
                 textComponent.text = init.GetText(lines[index]);
@@ -484,13 +484,10 @@ namespace PaperKiteStudios.BuzzReacto
                 mouseClickAnim.SetActive(false);
                 gameObject.SetActive(false);
                 icons[0].SetActive(false);
-                icons[1].SetActive(false);
-                icons[2].SetActive(false);
-                icons[3].SetActive(false);
-                
-            
 
-               if(player!=null)
+
+
+                if (player != null)
                 {
                     player.canMove = true;
                 }

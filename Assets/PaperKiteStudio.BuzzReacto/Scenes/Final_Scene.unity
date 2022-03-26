@@ -433,8 +433,8 @@ GameObject:
   - component: {fileID: 345102288}
   - component: {fileID: 345102291}
   - component: {fileID: 345102290}
-  - component: {fileID: 345102289}
   - component: {fileID: 345102292}
+  - component: {fileID: 345102289}
   m_Layer: 5
   m_Name: DialogueBox2
   m_TagString: Untagged
@@ -471,19 +471,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 345102287}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9be9d5880728c14eaec17d3d418894f, type: 3}
+  m_Script: {fileID: 11500000, guid: 65e51d73a42e1b44e84e79192d806ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textRate: 4
   textComponent: {fileID: 1249478190}
   lines:
   - finalScene-0002
-  textSpeed: 0.03
+  textSpeed: 0
   mouseClickAnim: {fileID: 723934464}
   icons:
   - {fileID: 1550785835}
   woodDialogBox: {fileID: 1172625741}
   torchDialogBox: {fileID: 345102287}
-  peteDialogBox: {fileID: 1601659137}
+  peteDialogBox: {fileID: 1740734011}
   carrotDialogBox: {fileID: 1601659137}
   photosynthDialogBox: {fileID: 1601659137}
   postPhotoDialogBox: {fileID: 1601659137}
@@ -971,6 +972,7 @@ MonoBehaviour:
   _speed: 3
   wayPoint1: {fileID: 345125117}
   wayPoint2: {fileID: 1916891037}
+  onPlatform: 0
 --- !u!61 &664167733
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1550,6 +1552,7 @@ MonoBehaviour:
   _speed: 3
   wayPoint1: {fileID: 835319443}
   wayPoint2: {fileID: 1830786102}
+  onPlatform: 0
 --- !u!61 &849053139
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1664,7 +1667,6 @@ GameObject:
   - component: {fileID: 901258638}
   - component: {fileID: 901258637}
   - component: {fileID: 901258636}
-  - component: {fileID: 901258635}
   - component: {fileID: 901258639}
   m_Layer: 0
   m_Name: NPC
@@ -1673,22 +1675,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &901258635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 901258634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a96a71b38bc019147967beecbab52e33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactable: 0
-  dialogueBox: {fileID: 0}
-  dialogBubble: {fileID: 0}
-  inventoryPanel: {fileID: 0}
 --- !u!61 &901258636
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2300,8 +2286,8 @@ GameObject:
   - component: {fileID: 1172625742}
   - component: {fileID: 1172625745}
   - component: {fileID: 1172625744}
-  - component: {fileID: 1172625743}
   - component: {fileID: 1172625746}
+  - component: {fileID: 1172625747}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -2329,31 +2315,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -210}
   m_SizeDelta: {x: -200, y: -440}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1172625743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1172625741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9be9d5880728c14eaec17d3d418894f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textComponent: {fileID: 1308422695}
-  lines:
-  - finalScene-0001
-  textSpeed: 0.03
-  mouseClickAnim: {fileID: 723934464}
-  icons:
-  - {fileID: 1550785835}
-  woodDialogBox: {fileID: 1172625741}
-  torchDialogBox: {fileID: 345102287}
-  peteDialogBox: {fileID: 1740734011}
-  carrotDialogBox: {fileID: 1601659137}
-  photosynthDialogBox: {fileID: 1601659137}
-  postPhotoDialogBox: {fileID: 1601659137}
 --- !u!114 &1172625744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2404,6 +2365,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToEnable: {fileID: 257414863}
+--- !u!114 &1172625747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172625741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e51d73a42e1b44e84e79192d806ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textRate: 4
+  textComponent: {fileID: 1308422695}
+  lines:
+  - finalScene-0001
+  textSpeed: 0
+  mouseClickAnim: {fileID: 723934464}
+  icons:
+  - {fileID: 1550785835}
+  woodDialogBox: {fileID: 1172625741}
+  torchDialogBox: {fileID: 345102287}
+  peteDialogBox: {fileID: 1740734011}
+  carrotDialogBox: {fileID: 1601659137}
+  photosynthDialogBox: {fileID: 1601659137}
+  postPhotoDialogBox: {fileID: 1601659137}
 --- !u!1 &1188114262
 GameObject:
   m_ObjectHideFlags: 0
@@ -2453,6 +2440,7 @@ MonoBehaviour:
   _speed: 3
   wayPoint1: {fileID: 1526698498}
   wayPoint2: {fileID: 1442665112}
+  onPlatform: 0
 --- !u!61 &1188114265
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3443,8 +3431,8 @@ GameObject:
   - component: {fileID: 1740734012}
   - component: {fileID: 1740734015}
   - component: {fileID: 1740734014}
-  - component: {fileID: 1740734013}
   - component: {fileID: 1740734016}
+  - component: {fileID: 1740734013}
   m_Layer: 5
   m_Name: DialogueBox3
   m_TagString: Untagged
@@ -3481,14 +3469,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1740734011}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9be9d5880728c14eaec17d3d418894f, type: 3}
+  m_Script: {fileID: 11500000, guid: 65e51d73a42e1b44e84e79192d806ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textRate: 4
   textComponent: {fileID: 561753189}
   lines:
   - finalScene-0003
   - finalScene-0004
-  textSpeed: 0.03
+  textSpeed: 0
   mouseClickAnim: {fileID: 723934464}
   icons:
   - {fileID: 1609898532}

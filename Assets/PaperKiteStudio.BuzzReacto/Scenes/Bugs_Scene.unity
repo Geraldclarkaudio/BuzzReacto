@@ -7815,6 +7815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9be9d5880728c14eaec17d3d418894f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textRate: 4
   textComponent: {fileID: 636311647}
   lines:
   - scene05-0010
@@ -8125,6 +8126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9be9d5880728c14eaec17d3d418894f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textRate: 4
   textComponent: {fileID: 577087524}
   lines:
   - scene05-0005
@@ -9885,6 +9887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9be9d5880728c14eaec17d3d418894f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textRate: 4
   textComponent: {fileID: 1794565249}
   lines:
   - scene05-0009
@@ -15105,11 +15108,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1892492971}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1132eeca9c8034a4593b5c5690a7a1b7, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ea9d80b677bfdd4fa2ec86a9ad9a078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objectToEnable: {fileID: 962957202}
-  objectToDisable: {fileID: 0}
 --- !u!225 &1892492974
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -16451,6 +16453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9be9d5880728c14eaec17d3d418894f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textRate: 4
   textComponent: {fileID: 1658308090}
   lines:
   - scene05-0001

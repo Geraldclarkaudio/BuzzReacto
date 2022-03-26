@@ -9,6 +9,7 @@ namespace PaperKiteStudios.BuzzReacto
     {
         public TextMeshProUGUI[] textComponent;
         public string[] textKey;
+        private int i;
 
         private Initializer init;
         // Start is called before the first frame update
@@ -16,8 +17,8 @@ namespace PaperKiteStudios.BuzzReacto
         {
             init = GameObject.Find("App").GetComponent<Initializer>();
 
-            textComponent[0].text = init.GetText(textKey[0]);
-            textComponent[1].text = init.GetText(textKey[1]);
+            textComponent[i].text = init.GetText(textKey[i]);
+            //textComponent[1].text = init.GetText(textKey[1]);
         }
 
 
